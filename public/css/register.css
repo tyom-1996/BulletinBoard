@@ -1,0 +1,184 @@
+.register-page .padding-block {
+    padding: 30px;
+    padding-top: 81px;
+    width: 100%;
+    height: 100%;
+}
+
+.center-register-block {
+    margin: auto;
+    max-width: 920px;
+    height: 100%;
+    /* padding: 0 10px; */
+}
+
+.login-register-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+#auth-register{
+    position: relative;
+    max-width: 660px;
+    width: 100%;
+    min-height: 320px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#register-form {
+    width: 48%;
+    height: 100%;
+    padding: 0 11px;
+}
+
+.soc-login-block{
+    width: 50%;
+    height: 100%;
+}
+
+.sing-in-with {
+    text-align: center;
+    color: #6b6b6b;
+    line-height: 1.3em;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+
+.register-social .btn-social {
+    display: block;
+    width: 243px;
+    position: relative;
+    padding-left: 44px;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 8px 20px 7px 17px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+}
+
+.register-social .button-google {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: rgba(0,0,0,.2);
+}
+
+.register-social .button-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,.2);
+    margin-top: 15px;
+}
+
+
+.register-social i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 19px;
+    text-align: center;
+    border-right: 1px solid hsla(0,0%,100%,.4);
+}
+
+.title-text{
+    font-size: 18px;
+    color: #ff5b5b;
+}
+
+.reg-form-title .icon-block{
+    color: #ff5b5b;
+    font-size: 20px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.reg-form-desc{
+    display: block;
+    padding: 19px 0 15px 0;
+    font-size: 15px;
+    text-align: left;
+    color: #6b6b6b;
+    line-height: 1.3em;
+}
+
+.register-form-input-bl{
+    height: 36px;
+    border-radius: 4px;
+    margin: 0 0 16px;
+    position: relative;
+}
+
+.register-form-input {
+    width: 100%;
+    padding: 3px 10px;
+    border: 0;
+    line-height: 20px;
+    background-color: #fff;
+    font-size: 13px;
+    color: #929292;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.radio-bl{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.radio-bl input{
+    margin-right: 5px;
+}
+
+.register-sbm-btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    padding: 8px 15px;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s;
+    background: #4cda64;
+    color: #fff;
+}
+
+
+.radio-wr-bl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.link-login-bl {
+    font-size: 11px;
+    color: #535353;
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.link-login{
+    margin-left:10px;
+    color: #1c9a3d;
+    font-size: 13px;
+    text-decoration: none;
+}
