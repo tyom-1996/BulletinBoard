@@ -121,22 +121,26 @@
 
                     {{-- BLOCK 1 START--}}
 
-                    <form id="login-form" action="">
-
+                    <form id="login-form" action="/login" method="POST">
+                        {{ csrf_field() }}
                         <p class="form-title"> <i class="fas fa-sign-out-alt"></i> <span>Вход</span></p>
 
                         <div class="login-form-input-bl">
-                            <input id="email_inp" name="email" class="login-form-input" type="text" placeholder="Телефон или e-mail">
+                            @php
+                                $show_error_border_email = $errors->has('email') ? 'error-border' : '' ;
+                                $show_error_border_password = $errors->has('password') ? 'error-border' : '' ;
+                            @endphp
+                            <input id="email_inp" name="email" class="{{$show_error_border_email}} login-form-input" type="text" placeholder="Телефон или e-mail" value="{{old('email')}}">
                         </div>
 
                         <div class="login-form-input-bl">
-                            <input id="password_inp" class="login-form-input" placeholder="Пароль" name="password" type="password">
+                            <input id="password_inp" class="{{$show_error_border_password}} login-form-input" placeholder="Пароль" name="password" type="password">
                             <i class="far fa-eye change-psw-type" data-type="text"></i>
                             <i class="fas fa-eye-slash change-psw-type  " data-type="password" style="display: none"></i>
                         </div>
 
                         <div class="reset-psw-bl">
-                            <a href="https://obyava.ua/ru/password" class="reset-psw">Забыли пароль?</a>
+                            <a href="/reset-password" class="reset-psw">Забыли пароль?</a>
                         </div>
 
                         <div class="button-block">

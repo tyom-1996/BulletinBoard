@@ -197,3 +197,7 @@
 .login-form-input:active,.login-form-input:focus{
     outline: none;
 }
+
+.error-border{
+    border:1px solid #fd7f7f;
+}

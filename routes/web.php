@@ -16,7 +16,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('/','welcomeController@index');
-Route::get('/login','welcomeController@login');
-Route::get('/register','welcomeController@register');
-Route::get('/socket','welcomeController@socket');
+Route::get('/','mainController@index');
+
+Route::get('/login','loginController@index')->name('login_page');
+Route::post('/login','loginController@login');
+
+Route::get('/register','registerController@index')->name('register_page');
+Route::post('/register','registerController@register');
+
+Route::get('/my-classifieds','userController@index')->name('myClassifieds');
+
+
+Route::get('/logout','userController@getSignOut');
+
+Route::get('/socket','mainController@socket');

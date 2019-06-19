@@ -29,7 +29,13 @@
     <title>Регистрация</title>
 </head>
 <body class="register-page">
-
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 <header>
     <div class="center-block">
         <a href="#" class="logo-block">
@@ -118,7 +124,8 @@
                     {{-- BLOCK 1 START--}}
 
 
-                        <form id="register-form">
+                        <form id="register-form" method="POST" action="/register">
+                            {{ csrf_field() }}
                             <p class="reg-form-title">
                                 <span class="icon-block"><i class="fas fa-key"></i></span>
                                 <span class="title-text">Регистрация</span>
@@ -129,34 +136,42 @@
                             </p>
 
                             <div class="register-form-input-bl">
-                                <input placeholder="Ваше имя" name="full_name" class="register-form-input" type="text" >
+                                @php
+                                    $show_error_border_full_name = $errors->has('fullname') ? 'error-border' : '' ;
+                                    $show_error_border_gender = $errors->has('gender') ? 'error-color' : '' ;
+                                    $show_error_border_email = $errors->has('email') ? 'error-border' : '' ;
+                                    $show_error_border_password = $errors->has('password') ? 'error-border' : '' ;
+                                    $show_error_border_password_confirmation = $errors->has('password_confirmation') ? 'error-border' : '' ;
+                                @endphp
+                                <input placeholder="Ваше имя" name="fullname" class="{{$show_error_border_full_name}} register-form-input" type="text"  value="{{ old('fullname') }}">
                             </div>
+
 
                             <div class="register-form-input-bl radio-wr-bl">
-                                <div class="radio-bl">
-                                    <input name="pol" value="man"  type="radio">
-                                    <label style="color: #929292;" for="">Мужской пол</label>
-                                </div>
-
 
                                 <div class="radio-bl">
-                                    <input name="pol" value="woman"  type="radio">
-                                    <label style="color: #929292;" for="">Женский пол</label>
+                                    <input  name="gender" value="man"  type="radio">
+                                    <label class="{{ $show_error_border_gender }}" style="color: #929292;" for="">Мужской пол</label>
                                 </div>
 
+                                <div class="radio-bl">
+                                    <input  name="gender" value="woman"  type="radio">
+                                    <label class="{{ $show_error_border_gender }}" style="color: #929292;" for="">Женский пол</label>
+                                </div>
 
                             </div>
 
+
                             <div class="register-form-input-bl">
-                                <input id="register-email" placeholder="E-mail" class="register-form-input" name="email" type="text">
+                                <input id="register-email" placeholder="E-mail" class="{{$show_error_border_email}} register-form-input" name="email" type="text" value="{{ old('email') }}">
                             </div>
 
                             <div class="register-form-input-bl">
-                                <input class="register-form-input" placeholder="Придуманный пароль" name="password" type="password" value="">
+                                <input class="{{$show_error_border_password}} {{$show_error_border_password_confirmation}} register-form-input"  placeholder="Придуманный пароль" name="password" type="password" value="">
                             </div>
 
                             <div class="register-form-input-bl">
-                                <input class="register-form-input" placeholder="Повторите пароль" name="password_confirmation" type="password" value="">
+                                <input class="{{$show_error_border_password_confirmation}} register-form-input" placeholder="Повторите пароль" name="password_confirmation" type="password" value="">
                             </div>
 
 
