@@ -22,7 +22,8 @@ class UsersTable extends Migration
             $table->string('region');
             $table->string('country');
             $table->string('phone_numbers');
-//            $table->string('remember_token');
+            $table->string('profile_image');
+            $table->string('remember_token');
             $table->timestamps();
         });
     }

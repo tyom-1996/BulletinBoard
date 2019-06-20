@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('/css/header_from_login.css')}}">
     <link rel="stylesheet" href="{{asset('/css/myclassifieds.css')}}">
 
+    <link href="https://fonts.googleapis.com/css?family=Oxygen|Slabo+27px&display=swap" rel="stylesheet">
 
     {{--ALISA START--}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -27,6 +28,7 @@
 
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/global.js')}}"></script>
+    <script src="{{asset('js/upload-user-image.js')}}"></script>
     <title>Регистрация</title>
 </head>
 <body class="my-classifieds">
@@ -37,11 +39,16 @@
         }
     });
 
+    @php
+        $fullname = $user_data[0]->fullname;
+        $profile_photo = $user_data[0]->profile_image;
+        $created_at_content = $user_data[0]->created_at_content;
+    @endphp
 
 </script>
 <header>
     <div class="center-block">
-        <a href="#" class="logo-block">
+        <a href="/" class="logo-block">
             <svg id="svg-id-logo" viewBox="0 0 107.5 22.5">
                 <g transform="matrix(1.25,0,0,-1.25,0,22.5)">
                     <g transform="scale(0.1,0.1)">
@@ -216,9 +223,37 @@
 
                     {{-----------START HEADER--------------}}
                         <div class="content-right-header">
-                            <div class="content-right-header-left-bl">
+
+
+                            <div class="content-right-header-left-bl profile-photo ">
+
+
+                                <div id="profile-photo-block">
+
+                                    <form method="POST" class="upload-photo-form" action="/upload_profile_photo" accept-charset="UTF-8" id="profile-photo" enctype="multipart/form-data" >
+                                        {{ csrf_field() }}
+                                        <div class="choose-photo-block">
+                                            <input class="upload-image-file" name="image" type="file">
+                                            <span class="icon absolute center pencil"></span>
+                                        </div>
+                                    </form>
+                                    <div class="image" style="background-image: url('{{$profile_photo}}');">
+                                        <i style="display: none;" class="fas fa-times delete-profile-photo" ></i>
+                                    </div>
+
+                                </div>
+
+                                <div class="profile-info">
+                                    <div class="name">{{$fullname}}</div>
+                                    <div class="registered-at">
+                                        <span>{{$created_at_content}}</span>
+
+                                    </div>
+                                    <a class="link" href="/profile">Перейти в профиль</a>
+                                </div>
 
                             </div>
+
 
                             <div class="content-right-header-right-bl">
 
@@ -278,7 +313,7 @@
     <footer id="footer">
 
         <div class="center-block footer-link">
-            <a class="default footer_logo" href="https://obyava.ua/ru/pages/obratnaja-svjaz" >
+            <a class="default footer_logo" href="/" >
                  <svg id="svg-id-logo" viewBox="0 0 107.5 22.5" >
                     <g transform="matrix(1.25,0,0,-1.25,0,22.5)">
                         <g transform="scale(0.1,0.1)">

@@ -162,6 +162,10 @@ body{
 .content-right-header-left-bl{
     width: 50%;
     min-height: 88px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .content-right-header-right-bl{
@@ -224,12 +228,113 @@ body{
 }
 
 .money-currency{
-    font-size: 11px;
+    font-size: 12px;
     position: relative;
     top: -8px;
+    font-weight: bold;
 }
 
 .add-balance-button:hover{
     background-color: #fff;
     color: #4cda64;
+}
+
+.profile-photo .choose-photo-block {
+    position: absolute;
+    top: -18px;
+    right: 21px;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #d5d5d5;
+    border-radius: 19px;
+    background-color: #fff;
+}
+
+.profile-photo .choose-photo-block input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #fff;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.icon.pencil {
+    width: 19px;
+    height: 20px;
+    background-image: url(https://obyava.ua/images/icon-pencil.png);
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin: auto;
+    display: block;
+    right: 0;
+    bottom: 0;
+}
+
+#profile-photo-block {
+    position: relative;
+    max-width: 90px;
+}
+
+
+#profile-photo-block .image {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    border-radius: 34px;
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+#profile-photo{
+    position: relative;
+    width: 100px;
+}
+
+/*.profile-info{*/
+/*    margin-top: 30px!important;*/
+/*}*/
+
+
+.profile-info .name {
+    font-size: 19px;
+    line-height: 1.2em;
+    color: #535353;
+}
+
+.profile-info .registered-at {
+    margin: 5px 0;
+    font-size: 11px;
+    line-height: 1.2em;
+    color: #535353;
+}
+
+.profile-info .link {
+    font-size: 14px;
+    color: #1c9a3d;
+    text-decoration: none;
+}
+
+
+#profile-photo-block .image:hover{
+    box-shadow: inset 0 0 55px 40px #4cda64;
+}
+
+.delete-profile-photo{
+    display: none;
+    font-size: 20px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 14px;
+    height: 17px;
+    color: #FFF;
+    cursor: pointer;
 }

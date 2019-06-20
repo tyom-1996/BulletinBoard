@@ -29,4 +29,9 @@ Route::get('/my-classifieds','userController@index')->name('myClassifieds');
 
 Route::get('/logout','userController@getSignOut');
 
+
+//UPLOAD PROFILE PHOTO
+
+Route::post('/upload_profile_photo','userController@uploadProfilePhoto');
+
 Route::get('/socket','mainController@socket');

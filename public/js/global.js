@@ -23,4 +23,15 @@ $(document).mouseover(function (event){
 
     }
 
+    var delete_profile_photo = $('#profile-photo-block .image');
+
+    if (!delete_profile_photo.is(event.target) && delete_profile_photo.has(event.target).length === 0) {
+        $('.delete-profile-photo').hide()
+    }else{
+        $('.delete-profile-photo').show()
+    }
+
 })
+
+
+
