@@ -65,3 +65,30 @@ button.button-new-announcement{
 button.button-new-announcement:hover{
 
 }
+
+.nav-header-icon {
+    position: relative;
+    width: 30px;
+    height: 23px;
+    margin-right: 11px;
+}
+.nav-header-icon svg{
+    position: absolute;
+    fill:#929292;
+    top: 0;
+    width: 23px;
+    height: 23px;
+}
+
+.logo-block{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 50px;
+}
+
+.logo-block svg{
+    width: 94px;
+    height: 20px;
+    fill: #fff;
+}

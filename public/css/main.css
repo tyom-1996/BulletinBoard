@@ -672,3 +672,11 @@ header{
 }
 
 
+.footer_logo{
+    width: 76px;
+    height: auto;
+}
+
+.footer_logo svg{
+    fill: white;
+}
