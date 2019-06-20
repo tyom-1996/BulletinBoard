@@ -1,0 +1,67 @@
+
+.center-block {
+    display: flex;
+    max-width: 1024px;
+    width: 100%;
+    height: 46px;
+    margin: auto;
+}
+
+.logo-block {
+    width: 11%;
+    height: 46px;
+    display: block;
+}
+
+
+.header-action {
+    width: 85%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.left-header-menu-bl {
+    width: 76%;
+    height: 46px;
+    z-index: 1;
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    right: 13px;
+}
+
+.right-header-menu-bl {
+
+    width: 24%;
+    height: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.user-header span img{
+    max-width: 30px;
+}
+
+button.button-new-announcement{
+    margin: 0;
+    position: relative;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+
+
+.my-classifieds .left-header-menu-bl:hover {
+    background: none;
+}
+
+button.button-new-announcement:hover{
+
+}

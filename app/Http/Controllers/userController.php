@@ -20,6 +20,7 @@ class userController extends Controller
         }
     }
 
+
     public function getSignOut() {
 
         Auth::logout();

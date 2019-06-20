@@ -17,7 +17,11 @@ class loginController extends Controller
 {
 
     public function index(){
-        return view('login');
+        if (Auth::user()){
+            return redirect()->route('myClassifieds');
+        }else{
+            return view('login');
+        }
     }
 
     public function login(Request $request){
