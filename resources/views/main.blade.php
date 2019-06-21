@@ -1055,7 +1055,7 @@
         </div>
     </section>
 
+    @include('includes.mini-chat');
 
-    @include('includes.mini-chat')
 </body>
 </html>

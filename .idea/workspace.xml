@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32b61ff2-d06d-4dea-a2e8-a21d8450bbd0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/chat-mini/chat-mini.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/chat-mini/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chat-mini/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/loginStyle/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/loginStyle/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profile-images/2-image/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/registerStyle/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/registerStyle/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/profile-images/2-image/2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loginUserPages/myMessages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loginUserPages/myMessages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/register.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,61 +26,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="42" column="36" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="36" />
-              <folding>
-                <element signature="e#7#389#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/myMessagesStyle/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="152" selection-start-line="152" selection-start-column="2" selection-end-line="154" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/loginUserPages/myMessages.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="77" column="97" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="97" />
+            <state relative-caret-position="154">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="92" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/main.css">
+        <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="541">
+              <caret line="217" selection-start-line="217" selection-end-line="218" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="254" selection-start-line="254" selection-end-line="254" />
             </state>
           </provider>
         </entry>
@@ -84,17 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+            <state relative-caret-position="98">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/chat-mini/chat-mini.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="1" selection-start-line="1" selection-end-line="2" />
+            <state relative-caret-position="177">
+              <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -102,20 +73,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/chat-mini/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="569">
+              <caret line="428" column="10" selection-start-line="428" selection-start-column="10" selection-end-line="428" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/profileController.php">
+        <entry file="file://$PROJECT_DIR$/public/css/loginStyle/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="101" column="84" selection-start-line="101" selection-start-column="84" selection-end-line="101" selection-end-column="84" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
+            <state>
+              <caret line="254" column="22" lean-forward="true" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -124,10 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main-search left-header-menu-bl</find>
-      <find>center-register-block</find>
-      <find>.center-block</find>
-      <find>ua</find>
       <find>button-new-announcement</find>
       <find>center-my-classifieds-block</find>
       <find>info</find>
@@ -153,8 +117,15 @@
       <find>my-classifieds</find>
       <find>font</find>
       <find>face</find>
+      <find>tra</find>
+      <find>transi</find>
+      <find>dragg</find>
       <find>top-zone</find>
+      <find>main</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\MyProjects\laravel\BulletinBoard\public\js</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,8 +160,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/userController.php" />
         <option value="$PROJECT_DIR$/public/js/uploadAndDeleteUserImage.js" />
         <option value="$PROJECT_DIR$/public/js/global.js" />
-        <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/footer.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/profileController.php" />
@@ -203,11 +172,16 @@
         <option value="$PROJECT_DIR$/resources/views/socket.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/mainController.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/loginUserPages/myMessages.blade.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/resources/views/main.blade.php" />
         <option value="$PROJECT_DIR$/public/css/chat-mini/style.css" />
+        <option value="$PROJECT_DIR$/resources/views/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/registerStyle/main.css" />
+        <option value="$PROJECT_DIR$/public/css/loginStyle/main.css" />
+        <option value="$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/chat-mini/chat-mini.js" />
       </list>
     </option>
   </component>
@@ -359,6 +333,26 @@
             <path>
               <item name="BulletinBoard" type="b2602c69:ProjectViewProjectNode" />
               <item name="BulletinBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="loginStyle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BulletinBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BulletinBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BulletinBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BulletinBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="chat-mini" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BulletinBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BulletinBoard" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -448,12 +442,12 @@
       <workItem from="1560920380668" duration="1114000" />
       <workItem from="1560923477659" duration="20418000" />
       <workItem from="1561008206241" duration="23202000" />
-      <workItem from="1561096597390" duration="22213000" />
+      <workItem from="1561096597390" duration="27958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150108000" />
+    <option name="totallyTimeSpent" value="155853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -518,23 +512,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/js/alisa-actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="65" column="134" selection-start-line="65" selection-start-column="134" selection-end-line="65" selection-end-column="134" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/css/css-class.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/code/hover_functions-js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5739" />
@@ -555,13 +532,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php" />
-    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/js/alisa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -613,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/loginStyle/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="202" column="1" selection-start-line="202" selection-start-column="1" selection-end-line="202" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/registerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -661,16 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/loginStyle/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="11" lean-forward="true" selection-end-line="683" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/registerStyle/main.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/profile-images/default-image.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -691,20 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="56" column="8" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="56" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -804,38 +743,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/js/alisa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+        <state relative-caret-position="994">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/js/voice-assistant.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/alisa-3.1/js/alisa-actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/chat-mini/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="294">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="77" column="97" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="97" />
+        <state relative-caret-position="154">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/loginStyle/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="202" column="1" selection-start-line="202" selection-start-column="1" selection-end-line="202" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/alisa-links.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="217" selection-start-line="217" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/chat-mini/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="428" column="10" selection-start-line="428" selection-start-column="10" selection-end-line="428" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/registerStyle/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="295" column="14" lean-forward="true" selection-start-line="294" selection-start-column="4" selection-end-line="295" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/loginStyle/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="254" column="22" lean-forward="true" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/mini-chat.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/chat-mini/chat-mini.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
         </state>
       </provider>
     </entry>
