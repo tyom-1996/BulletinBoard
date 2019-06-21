@@ -24,14 +24,20 @@ Route::post('/login','loginController@login');
 Route::get('/register','registerController@index')->name('register_page');
 Route::post('/register','registerController@register');
 
-Route::get('/my-classifieds','userController@index')->name('myClassifieds');
+Route::get('/my-classifieds','profileController@index')->name('myClassifieds');
+Route::get('/my-messages','profileController@myMessages')->name('myMessages');
 
 
-Route::get('/logout','userController@getSignOut');
+Route::get('/logout','profileController@getSignOut');
 
 
 //UPLOAD PROFILE PHOTO
 
-Route::post('/upload_profile_photo','userController@uploadProfilePhoto');
+Route::post('/upload_profile_photo','profileController@uploadProfilePhoto');
+
+//DELETE PROFILE PHOTO
+
+Route::post('/delete_photo','profileController@deleteProfilePhoto');
+
 
 Route::get('/socket','mainController@socket');

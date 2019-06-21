@@ -23,13 +23,41 @@ $(document).mouseover(function (event){
 
     }
 
-    var delete_profile_photo = $('#profile-photo-block .image');
+    //
+    //
+    // var business_button1 = $('.service-business-button-bl-1 a')
+    //
+    // if (!business_button1.is(event.target) && business_button1.has(event.target).length === 0) {
+    //     business_button1.css('color','#4cda64')
+    //     business_button1.find('svg').css('fill','#4cda64')
+    //     business_button1.css('background','#FFF')
+    //
+    //
+    // }else{
+    //     business_button1.css('color','#FFF')
+    //     business_button1.find('svg').css('fill','#FFF')
+    //     business_button1.css('background','#4cda64')
+    //
+    // }
+    //
+    //
+    // var business_button2 = $('.service-business-button-bl-2 a')
+    //
+    // if (!business_button2.is(event.target) && business_button2.has(event.target).length === 0) {
+    //     business_button2.css('color','#4cda64')
+    //     business_button2.find('svg').css('fill','#4cda64')
+    //     business_button2.css('background','#FFF')
+    //
+    // }else{
+    //     business_button2.css('color','#FFF')
+    //     business_button2.find('svg').css('fill','#FFF')
+    //     business_button2.css('background','#4cda64')
+    //
+    //
+    // }
 
-    if (!delete_profile_photo.is(event.target) && delete_profile_photo.has(event.target).length === 0) {
-        $('.delete-profile-photo').hide()
-    }else{
-        $('.delete-profile-photo').show()
-    }
+
+
 
 })
 

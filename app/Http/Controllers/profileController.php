@@ -10,7 +10,7 @@ use App\User;
 use Hash;
 
 
-class userController extends Controller
+class profileController extends Controller
 {
     public function index()
     {
@@ -33,7 +33,7 @@ class userController extends Controller
             return view('loginUserPages/myClassifieds',array('user_data' => $user_data));
 
         }else{
-            return redirect()->route('login_page');
+            return Redirect::route('login_page');
         }
     }
 
@@ -67,5 +67,41 @@ class userController extends Controller
         return back()
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName);
+    }
+
+
+    public function deleteProfilePhoto()
+    {
+        $user_id = Auth::id();
+        $path = "profile-images/$user_id-image";
+        $default_photo = asset('profile-images/default-image.png');
+
+        if (\File::exists($path)){
+            \File::deleteDirectory($path);
+
+
+            DB::table('users')
+                ->where('id',$user_id)
+                ->update(['profile_image' =>$default_photo] );
+
+            return  $default_photo;
+        }else{
+            return $default_photo;
+        }
+
+    }
+
+
+    public function myMessages()
+    {
+        if (Auth::user()){
+
+            $user_id = Auth::id();
+            $user_data = DB::select('select * from users where id = :id', ['id' => $user_id]);
+
+            return view('loginUserPages/myMessages',array('user_data' => $user_data));
+        }else{
+            return Redirect::route('login_page');
+        }
     }
 }
