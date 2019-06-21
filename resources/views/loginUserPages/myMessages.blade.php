@@ -23,7 +23,7 @@
 </head>
 <body class="my-messages">
 
-{{--    @include('includes.mini-chat')--}}
+
 
 <script>
     $.ajaxSetup({
