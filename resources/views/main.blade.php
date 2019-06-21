@@ -9,11 +9,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{asset('/css/main.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-    {{--ALISA START--}}
-    @include('includes.alisa-links')
-    {{--ALISA END--}}
+    {{--ALISA START --}}
+         @include('includes.alisa-links')
+    {{--ALISA END --}}
 
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/scroll.js')}}"></script>
@@ -21,7 +21,6 @@
     <title>Умная доска свежих объявлений</title>
 </head>
 <body>
-
     <header>
         <div class="center-block">
             <a href="#" class="logo-block">
@@ -445,7 +444,6 @@
                         </div>
 
                         <div class="classified-item">
-                            <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                             <div class="image-block">
                                 <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -497,7 +495,6 @@
                         </div>
 
                         <div class="classified-item">
-                            <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                             <div class="image-block">
                                 <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -549,7 +546,6 @@
                         </div>
 
                         <div class="classified-item">
-                            <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                             <div class="image-block">
                                 <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -601,7 +597,6 @@
                         </div>
 
                         <div class="classified-item">
-                            <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                             <div class="image-block">
                                 <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -658,7 +653,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -710,7 +704,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -762,7 +755,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -814,7 +806,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -867,7 +858,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">
@@ -919,7 +909,6 @@
                             </div>
 
                             <div class="classified-item">
-                                <div class="top-zone-label"><img src="/images/top-zone-icon.svg" alt=""></div>
 
                                 <div class="image-block">
                                     <img class="img portrait lazyloaded" src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" data-src="https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg" alt="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1" title="Услуги экскаватора, погрузчика, доставка стройматериалов. Запорожье. фото 1">

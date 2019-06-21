@@ -20,7 +20,7 @@ class mainController extends Controller
 
 
    public function socket(){
-        return view('socket');
+        return view('includes.mini-chat');
    }
 
 
