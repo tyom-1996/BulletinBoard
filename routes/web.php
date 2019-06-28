@@ -30,7 +30,6 @@ Route::get('/my-messages','profileController@myMessages')->name('myMessages');
 
 Route::get('/logout','profileController@getSignOut');
 
-
 //UPLOAD PROFILE PHOTO
 
 Route::post('/upload_profile_photo','profileController@uploadProfilePhoto');
@@ -41,3 +40,23 @@ Route::post('/delete_photo','profileController@deleteProfilePhoto');
 
 
 Route::get('/socket','mainController@socket');
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes Firebase
+|--------------------------------------------------------------------------
+
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+*/
+Route::get('/firebase', function () {
+
+    return view('test');
+
+});
+
+Route::get('/test','FirebaseController@index');

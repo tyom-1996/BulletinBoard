@@ -98,7 +98,6 @@ $(document).on('click','.close-mini-chat',function(){
     $(this).toggleClass('modal-open')
 
     if ($(this).hasClass('modal-open')){
-
         $_parent.attr('style',style)
         $_parent.css('height','324px')
         $_parent.find('.messages').show()
