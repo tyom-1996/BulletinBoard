@@ -427,6 +427,7 @@ Bounce
     color: black;
     right: 10px;
     top: 8px;
+    font-size: 12px;
 }
 
 .chat-title i:hover{

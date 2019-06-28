@@ -92,31 +92,52 @@ $(".chat").draggable()
 var style = ''
 
 $(document).on('click','.close-mini-chat',function(){
+    $(this).removeClass('fa-compress').addClass(' fa-compress-arrows-alt')
 
+    $_parent = $(this).parent().parent().parent();
     $(this).toggleClass('modal-open')
 
     if ($(this).hasClass('modal-open')){
 
-        $(this).parent().parent().attr('style',style)
-
-        $(this).parent().parent().css('height','324px')
-        $(this).parent().parent().find('.messages').show()
-        $(this).parent().parent().find('.message-box').show()
+        $_parent.attr('style',style)
+        $_parent.css('height','324px')
+        $_parent.find('.messages').show()
+        $_parent.find('.message-box').show()
     }else{
 
-        style = $(this).parent().parent().attr('style')
+        $(this).removeClass('fa-compress-arrows-alt').addClass('fa-compress')
 
-        $(this).parent().parent().css('height','46px')
-        $(this).parent().parent().find('.messages').hide()
-        $(this).parent().parent().find('.message-box').hide()
+        style = $(this).parent().parent().parent().attr('style')
 
-        $(this).parent().parent().css({
+        $_parent.css('height','46px')
+        $_parent.find('.messages').hide()
+        $_parent.find('.message-box').hide()
+
+        $(this).parent().parent().parent().css({
             'bottom': '46px',
-            'right' : '0',
+            'right' : '10px',
             'top':'unset',
             'left':'unset'
         })
 
+    }
+
+})
+
+
+
+
+$(document).on('dblclick','div.chat',function(){
+
+    if( !$(this).hasClass('modal-open') ){
+
+        $('.close-mini-chat').addClass('modal-open')
+        $('.close-mini-chat').removeClass('fa-compress').addClass(' fa-compress-arrows-alt')
+
+        $(this).attr('style',style)
+        $(this).css('height','324px')
+        $(this).find('.messages').show()
+        $(this).find('.message-box').show()
     }
 
 })

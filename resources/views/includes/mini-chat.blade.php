@@ -7,7 +7,10 @@
 
 <div style="bottom: 56px;right: 10px;" class="chat">
     <div class="chat-title">
-        <i class="fas fa-times close-mini-chat modal-open"></i>
+        <div class="action_bl">
+            <i class="fas fa-compress-arrows-alt close-mini-chat modal-open"></i>
+
+        </div>
         <h1>Fabio Ottaviani</h1>
         <h2>Admin</h2>
 
