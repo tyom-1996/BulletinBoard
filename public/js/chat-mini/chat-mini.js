@@ -31,7 +31,7 @@ function insertMessage() {
     }
     $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
-    $('.message-input').val(null);
+    // $('.message-input').val(null);
     updateScrollbar();
     setTimeout(function() {
         fakeMessage();
@@ -83,6 +83,15 @@ function fakeMessage() {
     }, 1000 + (Math.random() * 20) * 100);
 
 }
+
+
+
+//
+// setInterval(function() {
+//     fakeMessage();
+// }, 1000)
+
+
 
 //----------------------------------------
 

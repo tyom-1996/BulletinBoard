@@ -9,15 +9,12 @@
     <div class="chat-title">
         <div class="action_bl">
             <i class="fas fa-compress-arrows-alt close-mini-chat modal-open"></i>
-
         </div>
         <h1>Fabio Ottaviani</h1>
         <h2>Admin</h2>
-
         <figure class="avatar">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" />
         </figure>
-
     </div>
     <div class="messages">
         <div class="messages-content"></div>

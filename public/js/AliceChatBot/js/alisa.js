@@ -34,7 +34,7 @@ class Alisa {
 
     random_answer(array) {
         let num = Math.floor(Math.random() * array.length - 1) + 1;
-        array[num].answer()
+        array[num].answer();
     }
 
 
@@ -50,6 +50,7 @@ class Alisa {
     }
 
     written_test(comands, my_comand) {
+        
         this.defoltComands(comands);
         this.command_execution(comands, my_comand);
         this.toggleOn(my_comand, this.toggleOnData);
@@ -79,10 +80,7 @@ class Alisa {
 
     start() {
 
-
-            this.AliceVirtualAssistant();
-
-
+        this.AliceVirtualAssistant();
 
         window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
         this.recognition = new window.SpeechRecognition();
@@ -151,49 +149,17 @@ class Alisa {
         }
     }
 
-    SetComands(comands) {
+
+    SetComands(comands,my_comand) {
 
         comands = comands ? comands : {}
         this.defoltComands(comands)
 
-        this.recognition.onresult = (event) => {
-
-            this.interimTranscript = '';
-
-            for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
-
-                this.transcript = event.results[i][0].transcript.toLowerCase();
-
-                if (event.results[i].isFinal) {
-                    // this.finalTranscript += '\n<br><br>' + this.transcript;
-                    this.finalTranscript += this.transcript;
-                    this.my_comand = this.transcript;
-
-                    console.log(`Я:${ this.my_comand }`);
-
-                    if (this.switch == false) {
-                        this.command_execution(comands, this.my_comand);
-                    }
-                    this.toggleOn(this.my_comand, this.toggleOnData);
-                    this.toggleOff(this.my_comand, this.toggleOffData)
-
-                } else {
-                    $('.alisa_text_bl').val('')
-                    this.interimTranscript += this.transcript;
-                }
-
-            }
-
-            if (this.switch === false) {
-
-                $('.alisa_text_bl').val(
-                    this.finalTranscript.toLocaleLowerCase() + this.interimTranscript
-                    // this.finalTranscript.toLocaleLowerCase() + '<hr><i style="color:#ddd;">' + this.interimTranscript + '</>'
-                )
-                // document.getElementById('alisa_text_bl').innerHTML = this.finalTranscript.toLocaleLowerCase() + '<hr><i style="color:#ddd;">' + this.interimTranscript + '</>';
-                console.log(this.interimTranscript)
-            }
+        if (this.switch == false) {
+            this.command_execution(comands, my_comand);
         }
+        this.toggleOn(my_comand, this.toggleOnData);
+        this.toggleOff(my_comand, this.toggleOffData)
     }
 
 

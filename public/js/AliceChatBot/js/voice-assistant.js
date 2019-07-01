@@ -2623,10 +2623,16 @@
        }
    }
 
-   // alisa.SetComands(comands)
 
-   setTimeout(function () {
-       alisa.written_test(comands,'активация')
-   },2000)
+
+   $(document).on('click','.message-submit',function(){
+       let val = $('.message-input').val();
+       console.log( val )
+       alisa.written_test(comands,val)
+
+       $('.message-input').val(null);
+   })
+
+   // alisa.SetComands(comands)
 
 

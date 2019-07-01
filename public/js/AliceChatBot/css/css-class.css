@@ -1,0 +1,7 @@
+.ds-fl{
+    display: flex;
+}
+
+.js_cnt-sp_btw{
+    justify-content: space-between;
+}

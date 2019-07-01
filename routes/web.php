@@ -42,6 +42,12 @@ Route::post('/delete_photo','profileController@deleteProfilePhoto');
 Route::get('/socket','mainController@socket');
 
 
+//TEST
+
+Route::get('/chat-bot', function () {
+    return view('test.botTest');
+});
+
 
 
 /*
@@ -54,9 +60,7 @@ Route::get('/socket','mainController@socket');
 | contains the "web" middleware group. Now create something great!
 */
 Route::get('/firebase', function () {
-
     return view('test');
-
 });
 
 Route::get('/test','FirebaseController@index');

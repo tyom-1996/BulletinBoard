@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <link rel="stylesheet" href="{{asset('/css/myMessagesStyle/main.css')}}">
     <link rel="stylesheet" href="{{asset('/css/myMessagesStyle/myMessages.css')}}">
 
     <link href="https://fonts.googleapis.com/css?family=Oxygen|Slabo+27px&display=swap" rel="stylesheet">
 
     {{--ALISA START--}}
-    @include('includes.alisa-links')
+     @include('includes.alisa-links')
     {{--ALISA END--}}
 
     <script src="{{asset('js/header.js')}}"></script>
@@ -59,7 +58,7 @@
 
             <div class="content-left-menu">
 
-                <a class="menu-item first-child-icon" href="/my-messages" rel="nofollow" title="Мои объявления">
+                <a class="menu-item first-child-icon" href="/my-classifieds" rel="nofollow" title="Мои объявления">
                         <span class="button-icon">
                             <svg id="svg-id-male" viewBox="0 0 31.983 31.983">
                                 <path d="M29.984,24.985l-5.271-2.5l-2.076,1.229l6.513,3.088c0.067,0.031,0.834,0.16,0.834,1.229l0.001,1.952 L2,29.984v-2.028c0-0.794,0.597-1.044,0.835-1.154l8.782-4.146c0.63-0.288,1.063-0.885,1.147-1.571 c0.085-0.688-0.192-1.369-0.731-1.805c-2.078-1.668-3.047-5.334-3.047-7.286V6.996C8.987,4.906,12.625,2,15.991,2 c3.396,0,6.997,2.859,6.997,4.996v4.997c0,1.645-0.593,4.563-2.102,6.435c-0.082,0.096-0.186,0.211-0.308,0.34 c-0.168,0.177-0.334,0.356-0.521,0.506c-0.38,0.336-0.844,0.686-1.373,0.954l0.869,1.606c1.258-0.54,1.727-0.978,1.727-0.978 c2.771-2.18,3.708-6.463,3.708-8.863V6.996C24.989,3.686,20.407,0,15.991,0S6.987,3.686,6.987,6.996v4.997 c0,2.184,0.997,6.602,3.794,8.847l-8.782,4.146c0,0-1.998,0.891-1.998,1.998v3.001c0,1.104,0.895,1.999,1.998,1.999h27.985 c1.104,0,1.999-0.895,1.999-1.999v-3.001C31.983,25.809,29.984,24.985,29.984,24.985z"></path>
