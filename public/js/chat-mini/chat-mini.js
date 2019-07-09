@@ -31,7 +31,7 @@ function insertMessage() {
     }
     $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
-    // $('.message-input').val(null);
+    $('.message-input').val(null);
     updateScrollbar();
     setTimeout(function() {
         fakeMessage();
@@ -68,9 +68,9 @@ var Fake = [
 ]
 
 function fakeMessage() {
-    if ($('.message-input').val() != '') {
-        return false;
-    }
+    // if ($('.message-input').val() != '') {
+    //     return false;
+    // }
     $('<div class="message loading new"><figure class="avatar"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
     updateScrollbar();
 
@@ -96,7 +96,7 @@ function fakeMessage() {
 //----------------------------------------
 
 
-$(".chat").draggable()
+// $(".chat").draggable()
 
 var style = ''
 

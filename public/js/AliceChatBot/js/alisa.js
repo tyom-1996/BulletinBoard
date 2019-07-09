@@ -8,180 +8,170 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
     }
 })
 
-class Alisa {
+class Alice {
 
-    constructor() {
+    constructor()
+    {
+        this.d = '';
+        this.h = '';
+        this.m = '';
         this.audio;
         this.speak;
+        this.$messages = $('.messages-content')
         this.voice_setting = {};
         this.finalTranscript = '';
-        this.toggleOnData = [];
-        this.toggleOffData = [];
-        if (localStorage.getItem('switch') == null) {
-            localStorage.setItem('switch', true)
-        }
-        this.switch = JSON.parse(localStorage.getItem(('switch')));
-    }
-
-    //
-    // say(text) {
-    //     console.log('micrafon off')
-    //     this.recognition.stop()
-    //     this.speak = new Audio('https://code.responsivevoice.org/getvoice.php?t=' + text + '&tl=ru&sv=g1&vn=&pitch=0.5&rate=0.5&vol=1&gender=female');
-    //     this.speak.id = 'id'
-    //     this.speak.play()
-    // }
-
-    random_answer(array) {
-        let num = Math.floor(Math.random() * array.length - 1) + 1;
-        array[num].answer();
+        this.matchWithCommands = false;
     }
 
 
-    say(text) {
-        console.log('micrafon off')
-        this.recognition.stop()
-        this.request_attr =`${text}&tl=${this.voice_setting.lng}&sv=g1&vn=&pitch=${this.voice_setting.pitch}&rate=${this.voice_setting.rate}&vol=${this.voice_setting.vol}&gender=${this.voice_setting.gender}`;
-        this.speak = new Audio(
-            `https://code.responsivevoice.org/getvoice.php?t=${this.request_attr}`
-        );
-        this.speak.id = 'id'
-        this.speak.play()
+    random_answer(array)
+    {
+        this.num = Math.floor(Math.random() * array.length - 1) + 1;
+        array[this.num].answer();
     }
 
-    written_test(comands, my_comand) {
-        
-        this.defoltComands(comands);
+
+    written_test(comands, my_comand)
+    {
+        $('.message-input').attr('disabled',true)
+        this.insertMessage();
+        this.defaultComands(comands);
         this.command_execution(comands, my_comand);
-        this.toggleOn(my_comand, this.toggleOnData);
-        this.toggleOff(my_comand, this.toggleOffData)
     }
 
 
-    AliceVirtualAssistant() {
+    AppendAliceChatOnPage()
+    {
         $(document).ready(function() {
             $('body').append(`
-                <div id="box1" class="box blurred-bg tinted">
-<!--                    <img class="alisa_img" src="https://37l6no3yibdh3i9pro2isljk-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/oie_30144137iJGmGE90.gif" alt="">-->
+                <div style="bottom: 56px;right: 21px;" class="chat">
+                    <div class="chat-title">
+                        <div class="action_bl"><i class="fas fa-compress-arrows-alt close-mini-chat modal-open"></i></div>
+                        <h1 style="font-size: 16px;">Alisa</h1>
+                        <h2>Admin</h2>
+                        <figure class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkOCJp6CJDD3wDu2oipP_po0CcZMm7641Z2WfdGToaGu4F8GB" /></figure>
+                    </div>
+                    <div class="messages"><div class="messages-content"></div></div>
+                    <div class="message-box">
+                        <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                        <button type="submit" class="message-submit">Send</button>
+                    </div>
                 </div>
             `);
-
-            if (JSON.parse(localStorage.getItem(('switch'))) == false) {
-                console.log('im here');
-            } else {
-                console.log('i sleep');
-            }
-
         })
     }
 
 
+    //Alice chat functional START -----------------------------------
 
+    aliceAnswerMessage(text = '',not_found_comand = false) {
 
-    start() {
+        if ( text != '' ){
 
-        this.AliceVirtualAssistant();
-
-        window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-        this.recognition = new window.SpeechRecognition();
-        this.recognition.lang = 'ru-RU';
-        this.recognition.maxAlternatives = 1;
-        this.recognition.interimResults = true;
-        this.recognition.start()
-
-        console.log(this.recognition)
-
-        this.recognition.onend = () => {
-
-            if (screen.width > 600) {
-                this.interval = setInterval(() => {
-                    if (this.speak) {
-                        if (this.speak.playing) {
-                            console.log('play')
-                        } else {
-                            this.recognition.start()
-                            console.log('micrafon on')
-                            clearInterval(this.interval)
-                        }
-                    } else {
-                        this.recognition.start()
-                        console.log('micrafon on')
-                        clearInterval(this.interval)
-                    }
-                }, 100);
+            if (not_found_comand === true) {
+                $('.message-input').attr('disabled',true)
             }
 
-        };
-    }
+            $(`<div class="message loading new">
+                    <figure class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkOCJp6CJDD3wDu2oipP_po0CcZMm7641Z2WfdGToaGu4F8GB" /></figure>
+                    <span></span>
+                </div>
+            `).appendTo($('.mCSB_container'));
+
+            Alice.updateScrollbar();
+
+            setTimeout(function() {
+
+                $('.message.loading').remove();
+                $('<div class="message new"><figure class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkOCJp6CJDD3wDu2oipP_po0CcZMm7641Z2WfdGToaGu4F8GB" /></figure>' + text + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                Alice.updateScrollbar();
+                $('.message-input').attr('disabled',false)
+
+            }, 1000 + (Math.random() * 20) * 100);
 
 
+        } else{
 
-    toggleOn(my_comand, toggleOnData) {
-        for (let i = 0; i < toggleOnData.length; i++) {
-            if (toggleOnData[i].question == my_comand) {
-                this.say(toggleOnData[i].answer);
-                console.log(toggleOnData[i].answer);
-                localStorage.setItem('switch', false)
-                this.switch = JSON.parse(localStorage.getItem(('switch')));
-
-
-                $('#box1').css({
-                    'opacity': '1'
-                })
-
-
+            if ($('.message-input').val() != '') {
+                $('.message-input').attr('disabled',false)
+                return false;
             }
+
         }
+
     }
 
-    toggleOff(my_comand, toggleOffData) {
-        for (let i = 0; i < toggleOffData.length; i++) {
-            if (toggleOffData[i].question == my_comand) {
-                this.say(toggleOffData[i].answer);
-                console.log(toggleOffData[i].answer);
-                localStorage.setItem('switch', true)
-                this.switch = localStorage.getItem(('switch'));
 
-                $('#box1').css({
-                    'opacity': '0'
-                })
-            }
+    AppendAliceChatFUNCTIONALOnPage(){
+
+        $(document).ready(function() {
+            $('.messages-content').mCustomScrollbar();
+        });
+
+        this.aliceAnswerMessage('Привет,я Алиса.Чем могу помочь');
+
+        $('.message-submit').click(function() {
+            this.insertMessage();
+        });
+
+    }
+
+
+   static updateScrollbar() {
+
+       $('.messages-content').mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+            scrollInertia: 5,
+            timeout: 0
+        });
+
+   }
+
+
+
+
+    insertMessage() {
+
+        this.msg = $('.message-input').val();
+
+        if ($.trim(this.msg) == '') {
+            return false;
         }
+
+        $('<div class="message message-personal">' + this.msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        Alice.updateScrollbar();
+        Alice.aliceAnswerMessage;
+
     }
 
 
-    SetComands(comands,my_comand) {
-
-        comands = comands ? comands : {}
-        this.defoltComands(comands)
-
-        if (this.switch == false) {
-            this.command_execution(comands, my_comand);
-        }
-        this.toggleOn(my_comand, this.toggleOnData);
-        this.toggleOff(my_comand, this.toggleOffData)
-    }
-
-
-
-
-    stop() {
-        this.recognition.stop();
-    }
+    /*======= :|:================================= */
+    /* A.A.A.      Alice chat functional END     */
+    /*======= :|:================================= */
 
     command_execution(comands, my_comand) {
+
+
         for (let key in comands) {
-            //-----DBOYNAYA KOMANDA------------------
+
+            /*======= :|:================ */
+            /* A.A.A.      Double Tag     */
+            /*======= :|:================ */
+
             if (key.indexOf('||') > -1) {
                 this.two_comands_arr = key.split('||')
                 if (this.two_comands_arr.length > 1) {
                     if (this.two_comands_arr.indexOf(my_comand) != -1) {
-                        this.recognition.stop()
                         comands[key]();
+                        this.matchWithCommands = true;
                     }
                 }
             }
-            //-----MANY TAG------------------
+
+            /*======= :|:================ */
+            /* A.A.A.      Many Tag       */
+            /*======= :|:================ */
+
             if (key.indexOf('*') > -1) {
                 if (key.split('*').length > 1) {
                     this.diff = JsDiff.diffChars(key, my_comand);
@@ -192,50 +182,57 @@ class Alisa {
                     this.mycomandfirstWord = my_comand.replace(/ .*/, '');
 
                     for (let j = 0; j < this.diff.length; j++) {
-
-                        if (this.diff[j].added != true) {
-                            this.res1 += this.diff[j].value;
-                        }
-                        if (this.diff[j].value != '*') {
-                            this.res2 += this.diff[j].value
-                        }
-                        if (this.diff[j].added == true) {
-                            this.data.push(this.diff[j].value)
-                        }
-
+                        if (this.diff[j].added != true) { this.res1 += this.diff[j].value; }
+                        if (this.diff[j].value != '*' ) { this.res2 += this.diff[j].value; }
+                        if (this.diff[j].added == true) { this.data.push(this.diff[j].value); }
                     }
-
                     if (this.res2 == my_comand && this.mycomandfirstWord == this.keyfirstWord) {
-                        this.recognition.stop()
                         comands[key](this.data);
+                        this.matchWithCommands = true;
                     }
-
-                } else {
-
-                    continue;
-
                 }
+
+                else { continue; }
+
             }
-            //-----ODINOCHNAYA KOMANDA------------------
+
+            /*======= :|:================ */
+            /* A.A.A.     Single Command  */
+            /*======= :|:================ */
+
             else {
 
-                if (my_comand == key) {
-                    this.recognition.stop()
+                if (my_comand == key){
                     comands[key]();
+                    this.matchWithCommands = true;
+
+
                 }
 
             }
-
-
         }
+
+
+
+        /*======= :|:=================================================== */
+        /* A.A.A.     if the command is not found, activate input again.*/
+        /*======= :|:=================================================== */
+
+        if (this.matchWithCommands === false){
+            $('.message-input').attr('disabled',false);
+            this.aliceAnswerMessage('Пожалуйста,повторите вопрос',true);
+        }
+        this.matchWithCommands = false;
     }
 
 
 
-    defoltComands(comands) {
+
+
+    defaultComands(comands) {
 
         comands['перезагрузить||обновить||обнови страницу||обновить страницу||перезагрузи страницу'] = () => {
-            this.say('команда принята,обновляю страницу', "Russian Male")
+            this.aliceAnswerMessage('команда принята,обновляю страницу', "Russian Male")
             console.log('команда принята обновляю страницу')
             setTimeout(() => {
                 location.reload()
@@ -243,30 +240,29 @@ class Alisa {
         }
         comands['открой новую вкладку||открой новое окно'] = () => {
             window.open('https://www.google.com/')
-            this.say('новая вкладка открыта', "Russian Male")
+            this.aliceAnswerMessage('новая вкладка открыта', "Russian Male")
         }
 
-        comands["кто твой создатель"] = () => {
-            this.say("Мой создатель, артём арменович")
+        comands["кто твой создатель||кто тебя создал"] = () => {
+            this.aliceAnswerMessage("Мой создатель, артём арменович")
         }
         comands["начнем"] = () => {
-            this.say("чем желаете заняться?")
+            this.aliceAnswerMessage("чем желаете заняться?")
         }
         comands["перевод слова *"] = (data) => {
             window.open(
                 `https://translate.google.com/#view=home&op=translate&sl=ru&tl=en&text=${encodeURIComponent(data[0])}`
             )
-            this.say(`выполняю перевод слова,${data[0]}`)
+            this.aliceAnswerMessage(`выполняю перевод слова,${data[0]}`)
         }
         comands["найди в интернете *"] = (data) => {
             if (data.length > 0) {
                 window.open(`http://www.google.com/search?q=${encodeURIComponent(data[0])}`)
-                alisa.say(`найдены следующие результаты по запросу,${data[0]}`)
+                this.aliceAnswerMessage(`найдены следующие результаты по запросу,${data[0]}`)
             } else {
-                alisa.say('команда не выполнена.пожалуйста,введите ключевые слова для поиска')
+                this.aliceAnswerMessage('команда не выполнена.пожалуйста,введите ключевые слова для поиска')
             }
         }
-
 
 
         comands['сколько будет * * *'] = (data) => {
@@ -299,55 +295,15 @@ class Alisa {
                 }
                 try {
                     let result = `${number_one} ${action} ${number_two}`.replace(/D/g, '');
-                    this.say('результат' + eval(result))
+                    this.aliceAnswerMessage('результат' + eval(result))
                 } catch (err) {
-                    this.say('не могли бы вы говорить более четко')
+                    this.aliceAnswerMessage('не могли бы вы говорить более четко')
                 }
             }
         }
         comands['выйди из сайта'] = () => {
             location.href = '/logout'
         }
-        comands['открой свои настройки||открой настройки||настройки'] = () => {
-
-            if (!$('#box1').hasClass('beeg_box')) {
-                // let alisaState = !this.switch  ? 'Alisa Onn' : 'Alisa Off';
-                $('#box1').addClass('beeg_box')
-                $('#box1').removeAttr("style")
-                $('.voice_wave_left,.voice_wave_right').hide()
-                $('.coordinates').hide()
-                $('.alisa_img').hide()
-
-                $('#box1').append(`
-                    <div id="box2" class="box " style="width: 259px;right: 15px;height: 102px;bottom: 15px;top: unset;box-shadow: 0 0 transparent;">
-                    <div class="alisa-box-bg" style="background: transparent;"></div>
-                    <div class="alisa-box-content">
-                    <div class="voice_wave_left" style=""><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span></div>
-                    <div class="voice_wave_right" style=""><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span><span class="span"></span></div>
-                    </div></div>
-                `)
-
-                this.say('настройки открыты')
-            }
-
-
-        }
-
-        comands['закрой свои настройки||закрой настройки||закрой'] = () => {
-
-            if ($('#box1').hasClass('beeg_box')) {
-                $('#box1').removeClass('beeg_box')
-                $('.voice_wave_left,.voice_wave_right,.animation-wrapper').show()
-                $('#box2').remove()
-                $('.coordinates').show()
-                $('.alisa_img').show()
-
-                this.say('настройки закрыты')
-            }
-
-        }
-
-
 
 
     }

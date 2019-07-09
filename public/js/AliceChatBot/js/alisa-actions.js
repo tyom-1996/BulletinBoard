@@ -24,34 +24,6 @@ $(document).ready(function() {
 
     })
 
-    if (!$('#box1').hasClass('beeg_box')) {
-        $(".box").draggable({
-            drag: function() {
-                var offset = $(this).offset();
-                var xPos = offset.left;
-                var yPos = offset.top;
-                let screen_width = screen.width - 350;
-                let screen_height = screen.height - 200;
-                $('.boxX').text('X : ' + parseInt(xPos));
-                $('.boxY').text('Y : ' + parseInt(yPos));
-            },
-            stop: function() {
-                var offset = $(this).offset();
-                var xPos = offset.left;
-                var yPos = offset.top;
-                var screen_width = screen.width - 350;
-                var screen_height = screen.height - 200;
-
-                if (xPos <= 0) {
-                    $('.box').css('left', '')
-                }
-
-                if (xPos >= screen_width) {
-                    $('.box').css('left', '').css('right', '')
-                }
-            }
-        });
-    }
 
 
 
