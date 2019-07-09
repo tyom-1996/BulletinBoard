@@ -435,3 +435,11 @@ Bounce
     color: darkgrey;
     cursor: pointer;
 }
+
+.toggle-height{
+    height: 49px;
+    overflow: hidden;
+}
+.toggle-show{
+    display: none;
+}
