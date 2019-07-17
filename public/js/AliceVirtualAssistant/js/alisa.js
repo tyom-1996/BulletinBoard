@@ -11,26 +11,21 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
 class Alisa {
 
     constructor() {
+
         this.audio;
         this.speak;
-        this.voice_setting = {};
-        this.finalTranscript = '';
         this.toggleOnData = [];
         this.toggleOffData = [];
+        this.voice_setting = {};
+        this.finalTranscript = '';
+
         if (localStorage.getItem('switch') == null) {
             localStorage.setItem('switch', true)
         }
+
         this.switch = JSON.parse(localStorage.getItem(('switch')));
     }
 
-    //
-    // say(text) {
-    //     console.log('micrafon off')
-    //     this.recognition.stop()
-    //     this.speak = new Audio('https://code.responsivevoice.org/getvoice.php?t=' + text + '&tl=ru&sv=g1&vn=&pitch=0.5&rate=0.5&vol=1&gender=female');
-    //     this.speak.id = 'id'
-    //     this.speak.play()
-    // }
 
     random_answer(array) {
         let num = Math.floor(Math.random() * array.length - 1) + 1;
@@ -50,10 +45,12 @@ class Alisa {
     }
 
     written_test(comands, my_comand) {
+
         this.defoltComands(comands);
         this.command_execution(comands, my_comand);
         this.toggleOn(my_comand, this.toggleOnData);
-        this.toggleOff(my_comand, this.toggleOffData)
+        this.toggleOff(my_comand, this.toggleOffData);
+
     }
 
 
@@ -80,18 +77,17 @@ class Alisa {
     start() {
 
 
-            this.AliceVirtualAssistant();
-
-
+        this.AliceVirtualAssistant();
 
         window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+
         this.recognition = new window.SpeechRecognition();
         this.recognition.lang = 'ru-RU';
         this.recognition.maxAlternatives = 1;
         this.recognition.interimResults = true;
         this.recognition.start()
 
-        console.log(this.recognition)
+        console.log(this.recognition);
 
         this.recognition.onend = () => {
 
@@ -126,11 +122,9 @@ class Alisa {
                 localStorage.setItem('switch', false)
                 this.switch = JSON.parse(localStorage.getItem(('switch')));
 
-
                 $('#box1').css({
                     'opacity': '1'
                 })
-
 
             }
         }

@@ -58,7 +58,8 @@ header {
 }
 
 .user-header span img{
-    max-width: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 button.button-new-announcement{
@@ -99,8 +100,20 @@ button.button-new-announcement:hover{
     left: 50px;
 }
 
+
+
 .logo-block svg{
     width: 94px;
     height: 20px;
     fill: #fff;
 }
+
+.user-header-span{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    height: 33px;
+    width: 33px;
+    border: 1px solid silver;
+}
+

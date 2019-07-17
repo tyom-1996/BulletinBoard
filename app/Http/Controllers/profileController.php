@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use Auth;
 use App\User;
 use Hash;
+use Session;
+
 
 
 class profileController extends Controller
@@ -18,16 +20,16 @@ class profileController extends Controller
 
             $user_id = Auth::id();
             $user_data = DB::select('select * from users where id = :id', ['id' => $user_id]);
-            $cretaed_at = $user_data[0]->created_at;
+            $created_at = $user_data[0]->created_at;
 
-            $y = "EXTRACT(YEAR FROM '".$cretaed_at."')";
-            $m = "EXTRACT(MONTH FROM '".$cretaed_at."')";
+            $y = "EXTRACT(YEAR FROM '".$created_at."')";
+            $m = "EXTRACT(MONTH FROM '".$created_at."')";
 
             $month_array = array('Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря');
-
-            $year = DB::select("SELECT EXTRACT(YEAR FROM '".$cretaed_at."')")[0]->$y;
-            $month =  DB::select("SELECT EXTRACT(MONTH FROM '".$cretaed_at."')")[0]->$m;
+            $year = DB::select("SELECT EXTRACT(YEAR FROM '".$created_at."')")[0]->$y;
+            $month =  DB::select("SELECT EXTRACT(MONTH FROM '".$created_at."')")[0]->$m;
             $created_at_content = 'На OBYAVA.ua с: '.$month.' '.$month_array[$month-1].'  '.$year.'';
+
             $user_data[0]->created_at_content = $created_at_content;
 
             return view('loginUserPages/myClassifieds',array('user_data' => $user_data));
@@ -40,10 +42,8 @@ class profileController extends Controller
 
     public function getSignOut()
     {
-
         Auth::logout();
         return Redirect::route('login_page');
-
     }
 
 
@@ -70,26 +70,6 @@ class profileController extends Controller
     }
 
 
-    public function deleteProfilePhoto()
-    {
-        $user_id = Auth::id();
-        $path = "profile-images/$user_id-image";
-        $default_photo = asset('profile-images/default-image.png');
-
-        if (\File::exists($path)){
-            \File::deleteDirectory($path);
-
-
-            DB::table('users')
-                ->where('id',$user_id)
-                ->update(['profile_image' =>$default_photo] );
-
-            return  $default_photo;
-        }else{
-            return $default_photo;
-        }
-
-    }
 
 
     public function myMessages()

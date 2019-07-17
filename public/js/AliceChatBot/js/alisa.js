@@ -15,12 +15,12 @@ class Alice {
         this.d = '';
         this.h = '';
         this.m = '';
-        this.audio;
-        this.speak;
-        this.$messages = $('.messages-content')
-        this.voice_setting = {};
-        this.finalTranscript = '';
+        this.audio ;
+        this.speak ;
         this.matchWithCommands = false;
+        // $.getScript(location.origin+'/js/AliceChatBot/js/voice-assistant.js', function(){
+        //     alert('script loaded');
+        // });
     }
 
 
@@ -44,7 +44,7 @@ class Alice {
     {
         $(document).ready(function() {
             $('body').append(`
-                <div style="bottom: 56px;right: 21px;" class="chat">
+                <div class="chat">
                     <div class="chat-title">
                         <div class="action_bl"><i class="fas fa-compress-arrows-alt close-mini-chat modal-open"></i></div>
                         <h1 style="font-size: 16px;">Alisa</h1>
@@ -110,9 +110,26 @@ class Alice {
 
         this.aliceAnswerMessage('Привет,я Алиса.Чем могу помочь');
 
-        $('.message-submit').click(function() {
-            this.insertMessage();
-        });
+        $(document).on('click','.close-mini-chat',function(){
+            $('.chat').toggleClass('beeg-chat');
+        })
+
+
+
+        $(document).on('click','.message-submit',function(){
+            let val = $('.message-input').val();
+            alice.written_test(comands,val)
+            $('.message-input').val(null);
+        })
+
+
+        $(window).on('keydown', function(e) {
+            if (e.which == 13) {
+                let val = $('.message-input').val();
+                alice.written_test(comands,val)
+                $('.message-input').val(null);
+            }
+        })
 
     }
 
@@ -145,12 +162,48 @@ class Alice {
     }
 
 
-    /*======= :|:================================= */
-    /* A.A.A.      Alice chat functional END     */
-    /*======= :|:================================= */
+
+     Encrypt(theText) {
+        this.output = new String;
+        this.Temp = new Array();
+        this.Temp2 = new Array();
+        this.TextSize = theText.length;
+        for (let i = 0; i < this.TextSize; i++) {
+            this.rnd = Math.round(Math.random() * 122) + 68;
+            this.Temp[i] = theText.charCodeAt(i) + this.rnd;
+            this.Temp2[i] = this.rnd;
+        }
+        for (let i = 0; i < this.TextSize; i++) {
+            this.output += String.fromCharCode(this.Temp[i], this.Temp2[i]);
+        }
+        return this.output;
+    }
+
+    Decrypt(theText) {
+        this.output = new String;
+        this.Temp = new Array();
+        this.Temp2 = new Array();
+        this.TextSize = theText.length;
+        for (let i = 0; i < this.TextSize; i++) {
+            this.Temp[i] = theText.charCodeAt(i);
+            this.Temp2[i] = theText.charCodeAt(i + 1);
+        }
+        for (let i = 0; i < this.TextSize; i = i+2) {
+            this.output += String.fromCharCode(this.Temp[i] - this.Temp2[i]);
+        }
+        return this.output;
+    }
+
+
+
+
+
+
+    /*=======|****|=========================== */
+    /* A.A.A.      Alice chat functional END   */
+    /*=======|****|=========================== */
 
     command_execution(comands, my_comand) {
-
 
         for (let key in comands) {
 
@@ -167,7 +220,6 @@ class Alice {
                     }
                 }
             }
-
             /*======= :|:================ */
             /* A.A.A.      Many Tag       */
             /*======= :|:================ */
@@ -191,32 +243,38 @@ class Alice {
                         this.matchWithCommands = true;
                     }
                 }
-
                 else { continue; }
-
             }
 
-            /*======= :|:================ */
-            /* A.A.A.     Single Command  */
-            /*======= :|:================ */
+
+
+
 
             else {
 
-                if (my_comand == key){
+                if ( key.indexOf('{') > -1 && key.indexOf('}') > -1 || key.indexOf('}') > -1 && key.indexOf('{') > -1) {
+
+                    /* A.A.A.|     | Encrypt and Decrypt Command  */
+                    /*=======| *** |============================= */
+
+                    key == '{}' ? this.encryptDecrypt('{','}',my_comand,comands,key) : this.encryptDecrypt('}','{',my_comand,comands,key);
+                }
+
+
+                /* A.A.A. | *** |  Single Command  */
+                /*========| *** |================ */
+
+                if ( my_comand == key ){
                     comands[key]();
                     this.matchWithCommands = true;
-
-
                 }
 
             }
         }
 
 
-
-        /*======= :|:=================================================== */
-        /* A.A.A.     if the command is not found, activate input again.*/
-        /*======= :|:=================================================== */
+        /* A.A.A. | *** |  if the command is not found, activate input again.*/
+        /*========| *** |=================================================== */
 
         if (this.matchWithCommands === false){
             $('.message-input').attr('disabled',false);
@@ -225,26 +283,36 @@ class Alice {
         this.matchWithCommands = false;
     }
 
-
-
+    encryptDecrypt(a,b,my_comand,comands,key)
+    {
+        this.com = my_comand.split('');
+        if ( this.com[0] == a && this.com[this.com.length -1] == b ){
+            this.com[0] = '';
+            this.com[this.com.length -1] = '';
+            this.answer = this.com.join('');
+            comands[key](this.answer);
+            this.matchWithCommands = true;
+        }
+    }
 
 
     defaultComands(comands) {
 
         comands['перезагрузить||обновить||обнови страницу||обновить страницу||перезагрузи страницу'] = () => {
-            this.aliceAnswerMessage('команда принята,обновляю страницу', "Russian Male")
+            this.aliceAnswerMessage('команда принята,обновляю страницу')
             console.log('команда принята обновляю страницу')
             setTimeout(() => {
                 location.reload()
             }, 3000)
         }
+
         comands['открой новую вкладку||открой новое окно'] = () => {
             window.open('https://www.google.com/')
-            this.aliceAnswerMessage('новая вкладка открыта', "Russian Male")
+            this.aliceAnswerMessage('новая вкладка открыта')
         }
 
         comands["кто твой создатель||кто тебя создал"] = () => {
-            this.aliceAnswerMessage("Мой создатель, артём арменович")
+            this.aliceAnswerMessage("Мой создатель, Артём Арменович")
         }
         comands["начнем"] = () => {
             this.aliceAnswerMessage("чем желаете заняться?")
@@ -303,6 +371,15 @@ class Alice {
         }
         comands['выйди из сайта'] = () => {
             location.href = '/logout'
+        }
+
+        comands['{}'] = (data) => {
+            this.aliceAnswerMessage(this.Encrypt(data))
+        }
+
+        comands['}{'] = (data) => {
+            console.log('decrypt')
+            this.aliceAnswerMessage(this.Decrypt(data));
         }
 
 

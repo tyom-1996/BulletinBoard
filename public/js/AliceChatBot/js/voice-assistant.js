@@ -1,5 +1,4 @@
-   var alice = new Alice();
-   var audio;
+   var alice = new Alice(),audio;
 
    alice.AppendAliceChatOnPage();
    alice.AppendAliceChatFUNCTIONALOnPage();
@@ -9,18 +8,11 @@
       this.currentTime = 0.0;
    }
 
-   alice.voice_setting = {
-       'lng': 'ru',
-       'pitch' : '0.5',
-       'rate'  : '0.5',
-       'vol': '1',
-       'gender' :'female'
-   }
-
+   alice.voice_setting = {'lng': 'ru','pitch' : '0.5','rate'  : '0.5','vol': '1','gender' :'female'}
 
    let comands = {
 
-       'привет алиса':()=>{
+       'привет алиса||привет':()=>{
            alice.random_answer([
                {'answer':()=>{
                         console.log('Алиса: Здравствуйте сэр');
@@ -2611,21 +2603,6 @@
    }
 
 
-
-   $(document).on('click','.message-submit',function(){
-       let val = $('.message-input').val();
-       alice.written_test(comands,val)
-       $('.message-input').val(null);
-   })
-
-
-   $(window).on('keydown', function(e) {
-       if (e.which == 13) {
-           let val = $('.message-input').val();
-           alice.written_test(comands,val)
-           $('.message-input').val(null);
-       }
-   })
 
 
 

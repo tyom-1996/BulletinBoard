@@ -2623,10 +2623,13 @@
        }
    }
 
-   // alisa.SetComands(comands)
-
    setTimeout(function () {
-       alisa.written_test(comands,'активация')
+       alisa.SetComands(comands)
+
+       // alisa.written_test(comands,'активация')
    },2000)
 
 
+   $(document).ready(function() {
+       if (!$('#box1').hasClass('beeg_box')) { $(".box").draggable(); }
+   })

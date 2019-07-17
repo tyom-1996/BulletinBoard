@@ -10,7 +10,6 @@ class mainController extends Controller
    public function index()
    {
 
-
        if (Auth::user()){
            return redirect()->route('login_page');
        }else{

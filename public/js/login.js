@@ -15,3 +15,9 @@ $(document).on('click','.change-psw-type',function(){
 })
 
 
+
+$(window).on('keydown', function(e) {
+    if (e.which == 13) {
+        $('#login-form').submit();
+    }
+})

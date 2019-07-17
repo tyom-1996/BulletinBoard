@@ -2623,10 +2623,6 @@
        }
    }
 
-   // alisa.SetComands(comands)
-
-   setTimeout(function () {
-       alisa.written_test(comands,'активация')
-   },2000)
+   alisa.SetComands(comands)
 
 
