@@ -17,8 +17,13 @@ Route::post('/register','userController@register');
 Route::get('/my-classifieds','profileController@index')->name('myClassifieds');
 Route::get('/my-messages','profileController@myMessages')->name('myMessages');
 
-Route::get('/new-product','postController@openNewProductPage');
 
+//NEW POST;
+
+Route::get('/new-post-part-1','postController@open_New_Post_Page_Part_1');
+Route::get('/new-post-part-2','postController@open_New_Post_Page_Part_2')->name('new-post-part-2');
+
+//LOGOUT
 
 Route::get('/logout','profileController@getSignOut');
 
@@ -29,6 +34,11 @@ Route::post('/upload_profile_photo','profileController@uploadProfilePhoto');
 //DELETE PROFILE PHOTO
 
 Route::post('/delete_photo','profileController@deleteProfilePhoto');
+
+
+//Add new product
+
+Route::post('/add-new-product','postController@addNewProduct');
 
 
 Route::get('/socket','mainController@socket');

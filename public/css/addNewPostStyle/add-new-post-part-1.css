@@ -96,6 +96,7 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .input-label{
@@ -178,11 +179,12 @@ body{
     margin: auto;
     position: relative;
     border-bottom: none;
-    top: 2px;
+    top: 1px;
     background: white;
     font-size: 12px;
     padding: 3px;
     text-align: center;
+    z-index: 2;
 }
 
 
@@ -193,7 +195,8 @@ body{
     display: block;
     border: 1px dashed #c0c2c6;
     padding: 9px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    cursor:pointer;
 }
 
 #classified-photos{
@@ -207,6 +210,8 @@ body{
 .upload-photo-btn img.thumb{
     width: 100%;
     object-fit: contain;
+    height: 75px;
+    margin: 10px 5px 0 0;
 }
 
 .show-more-inputs{
@@ -233,4 +238,63 @@ body{
     width: 22px;
     right: 4px;
     top: 4px;
+}
+
+
+.new-product-submit{
+
+    position: relative;
+    padding: 9px ;
+    margin: 30px 0 28px 0;
+    background: #4cda64;
+    text-decoration: none;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color:white;
+    transition: 0;
+}
+
+
+.default-row.submit{
+    justify-content: flex-end;
+}
+
+
+#svg-id-close{
+
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    width: 22px;
+    right: 10px;
+    top: 11px;
+}
+
+#svg-id-close  path{
+    fill: #4cda64;
+}
+
+#price-select{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+.error-border{
+    border-color: #fd7f7f;
+}
+
+.new-product-submit:hover{
+    outline: 1px solid #4cda64!important;
+    background: white!important;
+    color: #4cda64!important;
+    transition: unset;
 }

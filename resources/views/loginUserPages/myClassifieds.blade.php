@@ -125,9 +125,15 @@
 
                                 <div class="user-service-active-classifieds">
 
-                                    <div class="classifieds-counter">
+                                    <div class="active-classifieds-bl">
                                         <span>
-                                          Активных объявлений: 0
+                                          Активных объявлений: <span class="active-classifieds-count">0</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="active-classifieds-bl">
+                                        <span>
+                                          На модерации: <span class="classifieds-on-moderation-count">0</span>
                                         </span>
                                     </div>
                                 </div>
@@ -178,7 +184,7 @@
                             <div class="classifieds-list-empty">Разместите свое объявление
                                 <br>
                                 <br>
-                                <a href="/new-product" rel="follow" target="_blank">
+                                <a href="/new-post-part-1" rel="follow" target="_blank">
                                      <img width="235" height="46" border="0" alt="Подать объявления бесплатно" src="{{asset('img/sendads_ru.gif')}}">
                                 </a>
                             </div>

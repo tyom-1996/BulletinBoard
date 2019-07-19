@@ -357,8 +357,11 @@ body{
 
 
 .user-service-active-classifieds{
-    width: 50%;
+    width: 46%;
     min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .user-service-buttons-business{
@@ -371,12 +374,21 @@ body{
 }
 
 .classifieds-counter{
+    /*padding: 8px 10px 10px 10px;*/
+    /*font-size: 14px;*/
+    /*font-weight: bold;*/
+    /*color: #535353;*/
+    /*background: #f4f4f4;*/
+    /*max-width: 200px;*/
+
     padding: 8px 10px 10px 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #535353;
-    background: #f4f4f4;
+    color: #4cda64;
+    /* background: #4cda6414; */
     max-width: 200px;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
 }
 
 .service-business-button-bl-1 svg,.service-business-button-bl-2 svg{
@@ -451,4 +463,42 @@ body{
 .service-business-button-bl-2 a:hover{
     color:white;
     background: #4cda64;
+}
+
+
+.classifieds-counter.active-counter{
+    margin-right: 13px;
+}
+
+.active-classifieds-bl{
+    color: #4cda64;
+    background-color: #fff;
+    display: block;
+    height: 35px;
+    letter-spacing: 1px;
+    padding: 9px 15px 10px 15px;
+    position: relative;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+
+.classifieds-on-moderation-bl{
+    color: #4cda64;
+    background-color: #fff;
+    display: block;
+    height: 35px;
+    letter-spacing: 1px;
+    padding: 9px 15px 10px 15px;
+    position: relative;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s;
 }

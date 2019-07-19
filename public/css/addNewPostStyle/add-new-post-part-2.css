@@ -1,0 +1,89 @@
+
+body{
+    transition: 0.3s;
+    background-image: url(/img/bg-page-profile.jpg);
+}
+.main-section{
+    background-image: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 46px 0px;
+
+}
+
+
+
+.padding-block {
+    padding-top: 0;
+    width: 100%;
+    height: calc(100vh - 92px);
+    overflow: auto;
+}
+
+.center-my-classifieds-block {
+    margin: auto;
+    max-width: 920px;
+    min-height: 211px;
+    /* padding: 0 10px; */
+    background: white;
+    position: relative;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,.13);
+    /*height: 100%;*/
+    /*overflow: auto;*/
+}
+
+
+.center-my-classifieds-block form{
+    width: 100%;
+    height: 100%;
+}
+
+.new-classified-steps{
+    padding: 20px 20px 20px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.new-classified-steps .steps-content {
+    display: flex;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.new-classified-steps .steps-content .step-item {
+    display: flex;
+    color: #bbb;
+}
+
+.new-classified-steps .steps-content .step-item .number {
+    padding: 0 10px 0 0;
+    line-height: 40px;
+    font-family: lucida_grandebold;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.new-classified-steps .steps-content .step-item .desc {
+    float: left;
+    padding: 0 0 2px;
+    line-height: 19px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.new-classified-steps .steps-content .step-separator {
+    margin: 12px 35px;
+}
+
+.icon.arrow7-right {
+    width: 21px;
+    height: 16px;
+    background-image: url(/img/arrow7-right.png);
+}
+
+.new-classified-steps .steps-content .step-item.active .desc, .new-classified-steps .steps-content .step-item.active .number {
+    color: #1c9a3d;
+}
+
