@@ -113,6 +113,7 @@ class userController extends Controller
         // INSERT
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['profile_image'] = asset("profile-images/default-image.png");
         User::create($input);
 
         return  redirect()->route('login_page');

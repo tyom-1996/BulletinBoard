@@ -25,6 +25,9 @@
     $show_error_border_name = $errors->has('name') ? 'error-border' : '' ;
     $show_error_border_price = $errors->has('price') ? 'error-border' : '' ;
     $show_error_border_description = $errors->has('description') ? 'error-border' : '' ;
+    $show_error_border_country = $errors->has('country') ? 'error-border' : '' ;
+    $show_error_border_tags = $errors->has('tags') ? 'error-border' : '' ;
+    $show_error_border_category = $errors->has('category') ? 'error-border' : '' ;
 @endphp
 
 <section class="main-section ">
@@ -85,6 +88,14 @@
                 </div>
 
 
+                <div class="default-row ">
+                    <label for="country" class="input-label required">Город</label>
+                    <div class="country-inp-block" style="width: 100%;margin-right: 0;">
+                        <input id="classified-country-input" value="{{old('country')}}" class="input-text required-field {{$show_error_border_country}}" maxlength="12" name="country" id="country" type="text">
+                    </div>
+                </div>
+
+
 
                 {{--Upload images--}}
 
@@ -130,7 +141,7 @@
 
                 <div class="show-more-inputs">загрузить больше фотографий </div>
 
-
+                <div class="default-row" style="font-size: 10px;line-height: 20px;margin-top: 24px;border-bottom: 1px solid #e0e0e0;color: #1c9a3d;padding-bottom: 9px;font-size: 15px;">Дополнительная информация</div>
 
                 {{--Description --}}
                 <div class="default-row ">
@@ -144,6 +155,39 @@
                     символа (-ов) из 4000
                 </div>
 
+
+                <div class="default-row ">
+                    <label for="classified-category-input" class="input-label required">Категории</label>
+                    <div class="category-inp-block" style="width: 100%;margin-right: 0;">
+                        <select id="classified-category-input" class="input-text required-field {{$show_error_border_category}}" name="category" >
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="default-row ">
+                    <label for="classified-tags-input" class="input-label required">Ключевые слова</label>
+                    <div class="tags-inp-block" style="width: 100%;margin-right: 0;">
+                        <input id="classified-tags-input" value="{{old('tags')}}" class="input-text required-field {{$show_error_border_tags}}" name="tags" >
+
+                        <div class="classified-tags-input-value">
+                            <ul></ul>
+                            <div class="classified-tags-hiden-input"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="default-row " style="    margin-top: 39px;">
+                    <label class="classified-category-input">
+                        <input checked="checked" name="allow_comments" type="checkbox" value="1">
+                        <span class="label">
+                            Разрешить комментарии к объявлению
+                        </span>
+                    </label>
+                </div>
 
                 <div class="default-row submit">
                     <button class="new-product-submit logged" href="#" style="background-color: rgb(76, 218, 100);">

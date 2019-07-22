@@ -362,8 +362,7 @@ header{
     outline: none;
 }
 .button-new-announcement{
-    padding: 9px 15px 7px 10px;
-    margin: 10px 0 0;
+    padding: 4px 15px 4px 10px;
     background: #4cda64;
     text-decoration: none;
     border-radius: 5px;

@@ -19,7 +19,11 @@ class Posts extends Migration
             $table->string('price');
             $table->string('currency');
             $table->string('description');
+            $table->string('category')->nullable(true);
+            $table->longtext('tags')->nullable(true);
             $table->longText('images');
+            $table->string('allow_comments');
+            $table->string('status')->nullable(true);
             $table->timestamps();
         });
     }

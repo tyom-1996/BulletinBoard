@@ -113,13 +113,45 @@ $(document).ready(function(){
             $(this).removeClass('error-border')
         }
 
-
-
-
-
     })
 
 
+    $(window).on('keydown', function(e) {
+        if (e.which == 13) {
+            return false
+        }
+    })
+
+
+    //Add and delete tags
+
+
+
+    $(document).on('keydown','#classified-tags-input', function(e) {
+        var $this =  $(this);
+        if (e.which == 13) {
+            if ($this.val().length >=2 ){
+                $('.classified-tags-input-value ul').append(`
+                   <li>
+                        <div> ${$this.val()}</div>
+                        <div class="classified-tag-delete-btn"></div>
+                    </li>
+                `)
+
+                $('.classified-tags-hiden-input').append(`
+                    <input type="hidden" name="tags[]" value="${$this.val()}"> 
+                `)
+
+                $this.val('')
+            }
+        }
+    })
+
+
+
+    $(document).on('click','.classified-tag-delete-btn',function () {
+        $(this).parent().remove();
+    })
 
 
 

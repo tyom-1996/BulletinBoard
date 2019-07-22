@@ -362,8 +362,7 @@ header{
     outline: none;
 }
 .button-new-announcement{
-    padding: 9px 15px 7px 10px;
-    margin: 10px 0 0;
+    padding: 4px 15px 4px 10px;
     background: #4cda64;
     text-decoration: none;
     border-radius: 5px;
@@ -473,6 +472,10 @@ header{
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
+    padding-top: 70px;
+    position: relative;
+    /* margin-top: 40px; */
+    top: -46px;
 }
 
 
@@ -527,8 +530,8 @@ header{
 .classified-item .image-block{
     position: relative;
     float: left;
-    width: 130px;
-    height: 115px;
+    width: 141px;
+    height: 148px;
     overflow: hidden;
     background-color: #f8f8f8;
 }
@@ -549,7 +552,7 @@ header{
 .info-block{
     overflow: hidden;
     position: relative;
-    height: 115px;
+    height: auto;
     padding-left: 10px;
 }
 
@@ -563,11 +566,15 @@ header{
     font-size: 15px;
     color: #008d36;
 }
+.info-block .name h4{
+    line-height: 16px;
+}
+
 .info-block .name a{
     text-decoration: none;
     color: #1c9a3d;
     font-weight: bold;
-
+    font-size: 13px;
 }
 
 
@@ -575,7 +582,7 @@ header{
     font-size: 16px;
     margin: .5em 0 .3em;
     color: #535353;
-    height: 15px;
+    /*height: 15px;*/
 }
 
 
@@ -594,9 +601,9 @@ header{
 
 .info-block .classified-summary .location{
     overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
+    /* position: relative; */
+    /* top: 6px; */
+    /* left: 10px; */
     height: 16px;
     line-height: 16px;
     color: #ababab;
@@ -609,7 +616,7 @@ header{
     height: 32px;
     line-height: 16px;
     padding: 0;
-    margin: .5em 0 0;
+    /*margin: .5em 0 0;*/
     color: #535353;
     font-size: 12px;
     letter-spacing: -.6px;
@@ -681,3 +688,36 @@ header{
 .footer_logo svg{
     fill: white;
 }
+
+.action-btn-block{
+    margin-top: 14px;
+}
+
+.action-btn-block button{
+    color: #4cda64;
+    background-color: #fff;
+    display: inline-block;
+    /* height: 35px; */
+    letter-spacing: 1px;
+    padding: 6px 11px;
+    position: relative;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: unset;
+    margin-top: 5px;
+}
+
+.action-btn-block button:hover {
+    background: #4cda64;
+    color: white;
+    transition: unset;
+}
+
+.action-btn-block button:active,.action-btn-block button:focus{
+    outline: none;
+}
+
+

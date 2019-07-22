@@ -40,6 +40,7 @@ class postController extends Controller
 
     public function addNewProduct(Request $request)
     {
+//        dd($request->input());
 
         $files = $request->file();
         $user_id = Auth::id();
@@ -47,7 +48,15 @@ class postController extends Controller
 
         // Validate Text
 
-        $request->validate([ 'name' => 'required','price' => 'required','currency' => 'required','description' => 'required', ]);
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'currency' => 'required',
+            'description' => 'required',
+            'country' => 'required',
+            'tags' => 'required',
+
+        ]);
 
         // Validate Images
 
@@ -58,7 +67,17 @@ class postController extends Controller
             request()->$key->move(public_path("product-images"), $image_new_name);
         };
 
-        Post::Save_New_Post($request->input(),$images_paths);
+        $tags = json_encode($request->input('tags'));
+
+
+        $insert_data = $request->input();
+        $insert_data['tags'] = $tags;
+        $insert_data['status'] = '0';
+
+//        dd($insert_data);
+
+
+        Post::Save_New_Post($insert_data,$images_paths);
         return redirect()->route('new-post-part-2');
 
     }

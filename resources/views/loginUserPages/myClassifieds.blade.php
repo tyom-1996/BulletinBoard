@@ -123,22 +123,20 @@
                         <div class="content-right-body">
                             <div class="user-service-buttons_bl">
 
-                                <div class="user-service-active-classifieds">
+{{--                                <div class="user-service-active-classifieds">--}}
 
-                                    <div class="active-classifieds-bl">
-                                        <span>
-                                          Активных объявлений: <span class="active-classifieds-count">0</span>
-                                        </span>
-                                    </div>
+{{--                                    <div class="active-classifieds-bl">--}}
+{{--                                        <span>--}}
+{{--                                          Активных объявлений: <span class="active-classifieds-count">0</span>--}}
+{{--                                        </span>--}}
+{{--                                    </div>--}}
 
-                                    <div class="active-classifieds-bl">
-                                        <span>
-                                          На модерации: <span class="classifieds-on-moderation-count">0</span>
-                                        </span>
-                                    </div>
-                                </div>
-
-
+{{--                                    <div class="active-classifieds-bl">--}}
+{{--                                        <span>--}}
+{{--                                          На модерации: <span class="classifieds-on-moderation-count">0</span>--}}
+{{--                                        </span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div class="user-service-buttons-business">
 
@@ -151,7 +149,7 @@
                                             </span>
                                             Бизнес-пакет
                                         </a>
-                                        <div class="time">Услуга не активирована</div>
+
                                     </div>
 
 
@@ -165,7 +163,7 @@
                                             </span>
                                             VIP статус
                                         </a>
-                                        <div class="time">Услуга не активирована</div>
+
                                     </div>
 
 
@@ -173,7 +171,305 @@
 
 
                             </div>
+                            <div class="content-scrolling-top">
 
+                                <div class="user-service-active-classifieds" >
+
+                                    <div class="active-classifieds-bl active-btn">
+                                        <span>
+                                          Активные: <span class="active-classifieds-count">0</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="active-classifieds-bl">
+                                        <span>
+                                          На модерации: <span class="classifieds-on-moderation-count">0</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="active-classifieds-bl">
+                                        <span>
+                                          Отклонено: <span class="classifieds-on-moderation-count">0</span>
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-scrolling-top-item ">
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="content-scrolling-top-item">
+
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="content-scrolling-top-item">
+
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="content-scrolling-top-item">
+
+
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+                                <div class="content-scrolling-top-item">
+
+
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="content-scrolling-top-item">
+
+                                    <div class="classified-item">
+
+                                        <div class="image-block"
+                                             style="background: url(https://obyava.ua/img/classified/0/410/7996/200-uxuhjnfz49uawa0d.jpg);
+                                            background-size: cover;
+                                            background-position: center;">
+                                        </div>
+
+                                        <div class="info-block">
+                                            <div class="fl-100 classified-summary">
+                                                <div class="name">
+                                                    <h4>
+                                                        <a href="https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html" title="Объявление Услуги экскаватора, погрузчика, доставка стройматериалов">
+                                                            Услуги экскаватора, погрузчика, доставка стройматериалов
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="classified-price">
+                                                    <span>1.00<sup>ГРН</sup></span>
+
+                                                </div>
+
+
+                                                <p class="parameters one-line">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto deleniti
+                                                </p>
+
+                                                <div class="action-btn-block">
+                                                    <button>Удалить</button>
+                                                    <button>Редактировать</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
                         </div>
                     {{-------------END right BODY------------}}
 

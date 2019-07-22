@@ -11,7 +11,7 @@ body{
     top: 0;
     left: 0;
     padding: 46px 0px;
-
+    overflow: auto;
 }
 
 .my-classifieds .padding-block {
@@ -143,6 +143,7 @@ body{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
 .content-right-body{
@@ -155,6 +156,7 @@ body{
     min-height: 72px;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 .content-right-footer div{
     text-align: center;
@@ -220,7 +222,12 @@ body{
 
 
 .balance-info .money {
-    padding: 5px 10px 5px;
+    padding: 5px;
+    padding-left: 0;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .balance-info .label {
@@ -348,20 +355,41 @@ body{
 
 .user-service-buttons_bl{
     position: relative;
+    z-index: 2;
     width: 100%;
     min-height: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 
 .user-service-active-classifieds{
-    width: 46%;
+    max-width: 433px;
+    width: 50%;
     min-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    z-index: 2;
+    position: absolute;
+    top: -4px;
+    left: 10px;
+}
+
+.active-classifieds-bl span{
+    transition: unset;
+}
+
+.active-btn{
+    background: #4cda64!important;
+    color: white!important;
+}
+
+.active-classifieds-bl:hover{
+    background: #4cda64;
+    color: white;
+    transition: unset;
 }
 
 .user-service-buttons-business{
@@ -374,13 +402,6 @@ body{
 }
 
 .classifieds-counter{
-    /*padding: 8px 10px 10px 10px;*/
-    /*font-size: 14px;*/
-    /*font-weight: bold;*/
-    /*color: #535353;*/
-    /*background: #f4f4f4;*/
-    /*max-width: 200px;*/
-
     padding: 8px 10px 10px 10px;
     font-size: 14px;
     font-weight: bold;
@@ -476,14 +497,14 @@ body{
     display: block;
     height: 35px;
     letter-spacing: 1px;
-    padding: 9px 15px 10px 15px;
+    padding: 9px 18px 10px 18px;
     position: relative;
     border: 1px solid #4cda64;
     border-radius: 5px;
     font-size: 13px;
     text-decoration: none;
     cursor: pointer;
-    transition: all .2s;
+    transition: unset;
 }
 
 

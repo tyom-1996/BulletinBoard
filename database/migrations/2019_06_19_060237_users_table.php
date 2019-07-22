@@ -20,7 +20,7 @@ class UsersTable extends Migration
             $table->string('password');
             $table->string('gender');
             $table->string('profile_image');
-            $table->string('remember_token');
+            $table->string('remember_token')->default('dwdw63');
             $table->timestamps();
         });
     }

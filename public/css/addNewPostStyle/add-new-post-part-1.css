@@ -204,6 +204,7 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-end;
+    margin-top: 37px!important;
 }
 
 
@@ -225,7 +226,7 @@ body{
     cursor: pointer;
     margin-left: 40px;
     font-size: 13px;
-
+    padding-bottom: 25px;
 }
 
 .upload-img-item{
@@ -297,4 +298,64 @@ body{
     background: white!important;
     color: #4cda64!important;
     transition: unset;
+}
+
+
+.classified-category-input span.label{
+    color: #535353;
+    font-size: 13px;
+}
+
+.classified-tags-input-value{
+    width: 100%;
+    min-height: 20px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.classified-tags-input-value ul{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 27px;
+}
+.classified-tags-input-value ul li{
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px 3px 18px;
+    margin: 3px 5px 3px 0;
+    position: relative;
+    line-height: 13px;
+    color: #333;
+    cursor: default;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    background: #e4e4e4;
+}
+
+.classified-tags-input-value ul li:nth-of-type(1){
+    margin-left: 0;
+}
+
+
+.classified-tag-delete-btn{
+    display: block;
+    width: 12px;
+    height: 13px;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    font-size: 1px;
+    outline: none;
+    background: url(http://localhost:8000/img/delete_teg.png) right top no-repeat;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    cursor: pointer;
+}
+
+
+.classified-tag-delete-btn:hover{
+    background-position: right -11px;
 }

@@ -34,12 +34,12 @@
         <div class="header-action">
 
             <div class="main-search left-header-menu-bl">
-                <button class="button-new-announcement logged" href="#">
+                <a href="/new-post-part-1" class="button-new-announcement logged" href="#">
                     <svg id="svg-id-arrow-rounded" viewBox="0 0 32 32" style="transform: rotate(0deg);">
                         <path d="M16,0C7.163,0,0,7.163,0,16c0,8.836,7.163,16,16,16s16-7.164,16-16C32,7.163,24.837,0,16,0z M16,30 C8.28,30,1.969,23.72,1.969,16S8.28,2,16,2s14,6.28,14,14S23.72,30,16,30z M15.979,8.043l-6.062,5.906 c-0.195,0.195-0.293,0.451-0.293,0.707s0.098,0.512,0.293,0.707c0.391,0.391,1.023,0.391,1.414,0l3.68-3.68V23.01 c0,0.553,0.448,1,1,1s1-0.447,1-1V11.746l3.618,3.617c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414L15.979,8.043z"></path>
                     </svg>
                     <span class="label">Разместить объявление</span>
-                </button>
+                </a>
 
             </div>
 

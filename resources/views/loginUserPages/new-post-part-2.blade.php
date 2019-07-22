@@ -35,11 +35,12 @@
 
                 <div class="new-classified-steps">
                     <div class="steps-content">
-
-                        <div class="step-item ">
-                            <div class="number">1</div>
-                            <div class="desc">Ввод <br> информации</div>
-                        </div>
+                        <a href="/new-post-part-1">
+                            <div class="step-item ">
+                                <div class="number">1</div>
+                                <div class="desc">Ввод <br> информации</div>
+                            </div>
+                        </a>
                         <div class="step-separator icon arrow7-right"></div>
                         <div class="step-item active">
                             <div class="number">2</div>
@@ -51,11 +52,13 @@
 
 
 
-                <div>
+                <div style="padding: 10px 25px;">
                     <h1 class="final_message"
                         style="min-height: 100px;display: flex;align-items: center;justify-content: center;color: #bbbbbb;font-size: 23px;">
                         Объявление отправлено администратору на проверку
                     </h1>
+
+                    <a class="redirect-btn" href="/my-classifieds">Вернуться к объявлениям</a>
 
                 </div>
 
