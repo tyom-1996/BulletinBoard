@@ -113,14 +113,14 @@ header{
     outline: none;
 }
 
-.separator{
-    width: 1px;
-    height: 32px;
-    border-top: 5px solid #fff;
-    border-bottom: 4px solid #fff;
-    background-color: #c7c7c7;
-    float: left;
-}
+/*.separator{*/
+/*    width: 1px;*/
+/*    height: 32px;*/
+/*    border-top: 5px solid #fff;*/
+/*    border-bottom: 4px solid #fff;*/
+/*    background-color: #c7c7c7;*/
+/*    float: left;*/
+/*}*/
 
 .select-menu .label{
     width: 148px;
@@ -131,7 +131,7 @@ header{
     white-space: nowrap;
     text-overflow: ellipsis;
     position: relative;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     justify-content: space-between;
 }
@@ -139,7 +139,7 @@ header{
     width: 22%;
 }
 .search-btn{
-    width: 4%;
+    width:7%;
 }
 
 .search-btn .search{
@@ -516,6 +516,7 @@ header{
     margin: 0 10px;
     border-bottom: 1px solid #e0e0e0;
     text-decoration: none;
+    height: 100%;
 }
 
 
@@ -531,7 +532,7 @@ header{
     position: relative;
     float: left;
     width: 141px;
-    height: 148px;
+    height: 139px;
     overflow: hidden;
     background-color: #f8f8f8;
 }
@@ -589,14 +590,17 @@ header{
 
 .info-block .classified-price span{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: lucida_grandebold;
 }
 
 .info-block .classified-price span sup{
-    font-weight: 400;
-    font-size: 11px;
+    font-family: lucida_granderegular;
+    font-weight: normal;
+    font-size: 12px;
     top: -.5em;
     position: relative;
+    left: 2px;
 }
 
 .info-block .classified-summary .location{
@@ -610,18 +614,17 @@ header{
     font-size: 13px;
 }
 
-.info-block .classified-summary .parameters{
-    overflow: hidden;
+.info-block .classified-summary .description{
+    display: block;
     position: relative;
-    height: 32px;
-    line-height: 16px;
-    padding: 0;
-    /*margin: .5em 0 0;*/
-    color: #535353;
-    font-size: 12px;
+    height: 46px;
+    line-height: 15px;
+    padding: 0 23px 0 0;
+    margin: .25em 0 0;
+    color: gray;
+    font-size: 13px;
+    overflow: hidden;
     letter-spacing: -.6px;
-    display:flex;
-    align-items:center;
 }
 
 
@@ -721,3 +724,6 @@ header{
 }
 
 
+.money-count{
+    padding: 0 6px;
+}

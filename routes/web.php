@@ -44,6 +44,15 @@ Route::post('/add-new-product','postController@addNewProduct');
 Route::get('/socket','mainController@socket');
 
 
+//Delete
+
+Route::post('/delete-classified','postController@deleteMyClassifieds');
+
+//Edit
+
+Route::get('/edit-classified/{id}','postController@editClassifiedsPage');
+Route::post('/edit-classified','postController@editMyClassifieds');
+
 //TEST
 
 Route::get('/chat-bot', function () {

@@ -1,0 +1,362 @@
+
+body{
+    transition: 0.3s;
+    background-image: url(/img/bg-page-profile.jpg);
+}
+.main-section{
+    background-image: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 46px 0px;
+
+}
+
+
+
+.padding-block {
+    padding-top: 0;
+    width: 100%;
+    height: calc(100vh - 92px);
+    overflow: auto;
+}
+
+.center-my-classifieds-block {
+    margin: auto;
+    max-width: 920px;
+    min-height: 340px;
+    /* padding: 0 10px; */
+    background: white;
+    position: relative;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,.13);
+    /*height: 100%;*/
+    /*overflow: auto;*/
+}
+
+
+.center-my-classifieds-block form{
+    width: 100%;
+    height: 100%;
+}
+
+.new-classified-steps{
+    padding: 20px 20px 20px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.new-classified-steps .steps-content {
+    display: flex;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.new-classified-steps .steps-content .step-item {
+    display: flex;
+    color: #bbb;
+}
+
+.new-classified-steps .steps-content .step-item .number {
+    padding: 0 10px 0 0;
+    line-height: 40px;
+    font-family: lucida_grandebold;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.new-classified-steps .steps-content .step-item .desc {
+    float: left;
+    padding: 0 0 2px;
+    line-height: 19px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.new-classified-steps .steps-content .step-separator {
+    margin: 12px 35px;
+}
+
+.icon.arrow7-right {
+    width: 21px;
+    height: 16px;
+    background-image: url(/img/arrow7-right.png);
+}
+
+.new-classified-steps .steps-content .step-item.active .desc, .new-classified-steps .steps-content .step-item.active .number {
+    color: #1c9a3d;
+}
+
+
+#new-classified-form .default-row {
+    position: relative;
+    margin-left: 40px;
+    margin-top: 20px;
+    max-width: 490px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.input-label{
+    color: #6a6a6a;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 13px;
+    margin: 6px 0;
+    line-height: 13px;
+    width: 100%;
+}
+
+.input-text {
+    display: block;
+    width: 100%;
+    line-height: 18px;
+    padding: 5px 10px;
+    border: 1px solid #cfcfcf;
+    border-radius: 3px;
+    margin: 0;
+    color: #535353;
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+}
+
+.input-label.required:after {
+    content: "*";
+    color: #ff5b5b;
+    padding-left: 2px;
+}
+
+
+#new-classified-form .name-input-countdown {
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.price-inp-block{
+    display: inline-block;
+    margin-right: 13px;
+}
+
+
+.select-inp-bl{
+    padding: 4px;
+    width: 77px;
+    border: 1px solid #cfcfcf;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.select-inp-bl select{
+    width: 100%;
+}
+
+.input-textarea {
+    display: block;
+    width: 100%!important;
+    height: 108px;
+    line-height: 18px;
+    padding: 8px 10px;
+    border: 1px solid #cfcfcf;
+    border-radius: 3px;
+    margin: 0;
+    font-family: lucida_granderegular;
+    font-size: 13px;
+    color: #929292;
+    background-color: #fff;
+}
+
+
+.photo-main{
+    border: 1px dashed #c0c2c6;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    border-bottom: none;
+    top: 1px;
+    background: white;
+    font-size: 12px;
+    padding: 3px;
+    text-align: center;
+    z-index: 2;
+}
+
+
+.upload-photo-btn{
+    position: relative;
+    width: 158px;
+    height: 122px;
+    display: block;
+    border: 1px dashed #c0c2c6;
+    padding: 9px;
+    box-sizing: border-box;
+    cursor:pointer;
+}
+
+#classified-photos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 37px!important;
+}
+
+
+.upload-photo-btn img.thumb{
+    width: 100%;
+    object-fit: contain;
+    height: 75px;
+    margin: 10px 5px 0 0;
+}
+
+.show-more-inputs{
+    position: relative;
+    max-width: 490px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #1c9a3d;
+    cursor: pointer;
+    margin-left: 40px;
+    font-size: 13px;
+    padding-bottom: 25px;
+}
+
+.upload-img-item{
+    margin-bottom: 9px;
+}
+
+.svg-id-plus{
+    fill: #4cda64;
+    position: absolute;
+    width: 22px;
+    right: 4px;
+    top: 4px;
+}
+
+
+.new-product-submit{
+
+    position: relative;
+    padding: 9px ;
+    margin: 30px 0 28px 0;
+    background: #4cda64;
+    text-decoration: none;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color:white;
+    transition: 0;
+}
+
+
+.default-row.submit{
+    justify-content: flex-end;
+}
+
+
+#svg-id-close{
+
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    width: 22px;
+    right: 10px;
+    top: 11px;
+}
+
+#svg-id-close  path{
+    fill: #4cda64;
+}
+
+#price-select{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+.error-border{
+    border-color: #fd7f7f;
+}
+
+.new-product-submit:hover{
+    outline: 1px solid #4cda64!important;
+    background: white!important;
+    color: #4cda64!important;
+    transition: unset;
+}
+
+
+.classified-category-input span.label{
+    color: #535353;
+    font-size: 13px;
+}
+
+.classified-tags-input-value{
+    width: 100%;
+    min-height: 20px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.classified-tags-input-value ul{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 27px;
+}
+.classified-tags-input-value ul li{
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px 3px 18px;
+    margin: 3px 5px 3px 0;
+    position: relative;
+    line-height: 13px;
+    color: #333;
+    cursor: default;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    background: #e4e4e4;
+}
+
+.classified-tags-input-value ul li:nth-of-type(1){
+    margin-left: 0;
+}
+
+
+.classified-tag-delete-btn{
+    display: block;
+    width: 12px;
+    height: 13px;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    font-size: 1px;
+    outline: none;
+    background: url(http://localhost:8000/img/delete_teg.png) right top no-repeat;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    cursor: pointer;
+}
+
+
+.classified-tag-delete-btn:hover{
+    background-position: right -11px;
+}
+

@@ -7,10 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Auth;
 use App\User;
+use App\Post;
 use Hash;
 use Session;
-
-
 
 class profileController extends Controller
 {
@@ -32,12 +31,17 @@ class profileController extends Controller
 
             $user_data[0]->created_at_content = $created_at_content;
 
-            return view('loginUserPages/myClassifieds',array('user_data' => $user_data));
+
+            $content = Post::Get_User_Classifieds();
+
+            return view('loginUserPages/myClassifieds',array('user_data' => $user_data,'classifieds_Content' => $content));
 
         }else{
             return Redirect::route('login_page');
         }
     }
+
+
 
 
     public function getSignOut()

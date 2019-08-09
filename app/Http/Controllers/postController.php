@@ -46,18 +46,6 @@ class postController extends Controller
         $user_id = Auth::id();
         $images_paths = array();
 
-        // Validate Text
-
-        $request->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'currency' => 'required',
-            'description' => 'required',
-            'country' => 'required',
-            'tags' => 'required',
-
-        ]);
-
         // Validate Images
 
         foreach ($files as $key => $value){
@@ -67,18 +55,42 @@ class postController extends Controller
             request()->$key->move(public_path("product-images"), $image_new_name);
         };
 
-        $tags = json_encode($request->input('tags'));
-
 
         $insert_data = $request->input();
-        $insert_data['tags'] = $tags;
+        $insert_data['tags'] =!empty( $request->input('tags')) ? $request->input('tags') : [];
         $insert_data['status'] = '0';
+        $insert_data['user_id'] = Auth::id();
 
-//        dd($insert_data);
+        Post::SaveNewPost($insert_data,$images_paths);
 
-
-        Post::Save_New_Post($insert_data,$images_paths);
         return redirect()->route('new-post-part-2');
 
+    }
+
+
+    public function deleteMyClassifieds(Request $request)
+    {
+        if($request->ajax())
+        {
+            $id = $request->input('id');
+            Post::DeleteClassifiedsInDatabase($id);
+            return response()->json('deleted');
+        }
+    }
+
+
+    public function editClassifiedsPage(Request $request)
+    {
+        $id = $request->id;
+        $post_data = Post::GetPostByID($id);
+        return view('loginUserPages/edit-classifieds',array('post_data' => $post_data));
+
+    }
+
+
+    public function editMyClassifieds(Request $request){
+
+        dd($request->input());
+        //        $update_data =
     }
 }

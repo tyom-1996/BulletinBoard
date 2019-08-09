@@ -1,5 +1,5 @@
 {{--ORIGINAL PAGE https://obyava.ua/--}}
-<!doctype html>
+        <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,49 +8,45 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('/css/addNewPostStyle/main.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/addNewPostStyle/add-new-post-part-1.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/EditPostStyle/main.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/EditPostStyle/edit-post-style.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Oxygen|Slabo+27px&display=swap" rel="stylesheet">
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/global.js')}}"></script>
     <script src="{{asset('js/add-new-post.js')}}"></script>
+    <script src="{{asset('js/edit-post.js')}}"></script>
     <title>Новое объявление</title>
 </head>
-<body >
-    @include('includes.header')
+
+<body>
+
+@include('includes.header')
 
 <section class="main-section ">
 
     <div class="padding-block">
         <div class="center-my-classifieds-block">
 
-            <form action="/add-new-product" method="post" id="new-classified-form" enctype="multipart/form-data">
-
+            <form action="/edit-classified" method="post" id="new-classified-form" enctype="multipart/form-data">
+                <input type="hidden" name="product_id" value="{{$post_data['id']}}">
                 {{csrf_field()}}
                 <div class="new-classified-steps">
                     <div class="steps-content">
 
                         <div class="step-item active">
-                            <div class="number">1</div>
-                            <div class="desc">Ввод <br> информации</div>
+                            <div class="desc">Изменить объявление</div>
                         </div>
-                        <div class="step-separator icon arrow7-right"></div>
-                        <div class="step-item ">
-                            <div class="number">2</div>
-                            <div class="desc">Размещение <br> объявления</div>
-                        </div>
+
                     </div>
                 </div>
 
-
-                {{--Title input --}}
+                {{-- Title input --}}
 
                 <div class="default-row">
                     <label for="name" class="input-label required">Заголовок</label>
-                    <input  id="classified-name-input"  value="{{old('name')}}" class="input-text required-field   " maxlength="80" name="name" type="text" data-tooltip="Заполните поле &quot;Заголовок&quot;">
+                    <input  id="classified-name-input"  value=" {{$post_data['title']}}" class="input-text required-field   " maxlength="80" name="name" type="text" data-tooltip="Заполните поле &quot;Заголовок&quot;">
 
                     <div class="name-input-countdown">
                         Осталось символов:
@@ -66,7 +62,7 @@
                 <div class="default-row ">
                     <label for="price" class="input-label required">Цена</label>
                     <div class="price-inp-block">
-                        <input id="classified-price-input"  value="{{old('price')}}" class="input-text required-field " maxlength="12" name="price" type="number">
+                        <input id="classified-price-input"  value="{{$post_data['price']}}" class="input-text required-field " maxlength="12" name="price" type="number">
 
                     </div>
                     <div class="select-inp-bl">
@@ -83,7 +79,7 @@
                 <div class="default-row ">
                     <label for="country" class="input-label required">Город</label>
                     <div class="country-inp-block" style="width: 100%;margin-right: 0;">
-                        <input id="classified-country-input" value="{{old('country')}}" class="input-text required-field " maxlength="12" name="country" id="country" type="text">
+                        <input id="classified-country-input" value="{{$post_data['country']}}" class="input-text required-field " maxlength="12" name="country" id="country" type="text">
                     </div>
                 </div>
 
@@ -136,7 +132,7 @@
                 {{--Description --}}
                 <div class="default-row ">
                     <label for="description" class="input-label required">Описание</label>
-                    <textarea class="input-textarea required-field" value="" maxlength="4000" name="description" cols="50" rows="10" id="description"></textarea>
+                    <textarea class="input-textarea required-field"  maxlength="4000" name="description" cols="50" rows="10" id="description">{{$post_data['description']}}</textarea>
                 </div>
 
                 <div class="default-row" style="font-size: 10px; line-height: 20px;margin-top: 5px;">
@@ -149,9 +145,9 @@
                 <div class="default-row ">
                     <label for="classified-category-input" class="input-label required">Категории</label>
                     <div class="category-inp-block" style="width: 100%;margin-right: 0;">
-                        <select id="classified-category-input" class="input-text" name="category" >
-                            <option value=""></option>
-                        </select>
+
+                        @include('includes.categories')
+
                     </div>
                 </div>
 
@@ -164,8 +160,27 @@
                         <input id="classified-tags-input" value="{{old('tags')}}" class="input-text" name="tags" >
 
                         <div class="classified-tags-input-value">
-                            <ul></ul>
-                            <div class="classified-tags-hiden-input"></div>
+
+                            <ul>
+                                @php
+                                     $tags = json_decode($post_data['tags']);
+                                @endphp
+
+                                @for($i=0;$i<count($tags);$i++)
+                                    <li class="tags-item">
+                                        <div> {{$tags[$i]}}</div>
+                                        <div data-id="{{$i+1}}" class="classified-tag-delete-btn"></div>
+                                    </li>
+                                @endfor
+                            </ul>
+
+                            <div class="classified-tags-hiden-input">
+
+                                @for($i=0;$i<count($tags);$i++)
+                                    <input type="hidden" name="tags[]" data-id="{{$i+1}}" value="{{$tags[$i]}}" class="hidden-tags-input">
+                                @endfor
+
+                            </div>
                         </div>
                     </div>
                 </div>

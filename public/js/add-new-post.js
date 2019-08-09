@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 
 
-    $(document).on('input','.required-field',function () {
+    $(document).on('input','.required-field,#classified-tags-input',function () {
 
         if ( $(this).val() == '' ){
             if (!$(this).hasClass('error-border')){
@@ -123,23 +123,32 @@ $(document).ready(function(){
     })
 
 
+
     //Add and delete tags
 
+    var tags_count = 0;
+
+    //edit page
+
+    $('.hidden-tags-input').each(function () {
+        tags_count = $(this).data('id');
+    })
 
 
     $(document).on('keydown','#classified-tags-input', function(e) {
         var $this =  $(this);
         if (e.which == 13) {
             if ($this.val().length >=2 ){
+                tags_count++
                 $('.classified-tags-input-value ul').append(`
-                   <li>
+                   <li class="tags-item">
                         <div> ${$this.val()}</div>
-                        <div class="classified-tag-delete-btn"></div>
+                        <div data-id="${tags_count}" class="classified-tag-delete-btn"></div>
                     </li>
                 `)
 
                 $('.classified-tags-hiden-input').append(`
-                    <input type="hidden" name="tags[]" value="${$this.val()}"> 
+                    <input  type="hidden" name="tags[]" data-id="${tags_count}" value="${$this.val()}" class="hidden-tags-input"> 
                 `)
 
                 $this.val('')
@@ -150,8 +159,53 @@ $(document).ready(function(){
 
 
     $(document).on('click','.classified-tag-delete-btn',function () {
+
+        var data_id = $(this).data('id');
+
         $(this).parent().remove();
+
+        $('.classified-tags-hiden-input input').each(function(){
+
+            if ($(this).data('id') == data_id )
+            {
+                $(this).remove()
+            }
+        })
+
     })
+
+
+    $(document).on('click','.new-product-submit',function(event){
+
+        event.preventDefault()
+
+        let submit = true;
+
+        $('.required-field').each(function(){
+            if ($(this).val() == '')
+            {
+                submit = false;
+                $(this).addClass('error-border')
+            }
+        })
+
+
+
+        if (!$('.classified-tags-hiden-input').find('input').hasClass('hidden-tags-input'))
+        {
+            submit = false;
+            $('#classified-tags-input').addClass('error-border')
+            console.log('chka')
+        }
+
+        if (!submit)
+        {
+            return false;
+        }else{
+            $('#new-classified-form').submit();
+        }
+    })
+
 
 
 

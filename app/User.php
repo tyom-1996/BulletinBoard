@@ -16,4 +16,9 @@ class User extends Authenticatable
         return User::find(Auth::id())['profile_image'] ;
     }
 
+    public static function Get_User_By_ID()
+    {
+        return User::find(Auth::id());
+    }
+
 }

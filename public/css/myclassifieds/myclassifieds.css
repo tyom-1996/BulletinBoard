@@ -523,3 +523,114 @@ body{
     cursor: pointer;
     transition: all .2s;
 }
+
+.classifieds-wrap{
+    width: 100%;
+    display: flex;
+    float: unset;
+    flex-wrap: wrap;
+}
+
+
+.action-btn{
+    color: #4cda64;
+    background-color: #fff;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 6px 11px;
+    position: relative;
+    border: 1px solid #4cda64;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: unset;
+    margin-top: 5px;
+}
+
+
+.classifieds-action-block{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 42px;
+    top: 0;
+    right: 0;
+}
+
+
+
+.tags-block{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 16px;
+    line-height: 16px;
+    padding: 0;
+    font-weight: 600;
+    margin: .5em 0 0;
+    color: #535353;
+    font-size: 12px;
+    letter-spacing: -.6px;
+}
+
+
+summary:active,summary:focus{
+    outline: none;
+}
+
+.separator{
+    color: #ababab;
+    margin: 0 4px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+
+.classifieds-action-block i{
+    font-size: 15px;
+}
+
+
+.hide-classifieds{
+    display: none;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.delete-classified i,.edit-classified i{
+    transition: unset;
+}
+.delete-classified i:hover,.edit-classified i:hover{
+    color:#4cda64;
+}
+
+.no-classifieds{
+    padding-left: 11px;
+    color: #6d6c6d;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    padding-top: 38px;
+}
+
+
+.info-block .name.title{
+    max-width: 220px;
+    max-height: 35px;
+    overflow: hidden;
+}
+
+
+/*delete modal style*/
+
+.delete-modal-bg{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: #0000007a;
+}

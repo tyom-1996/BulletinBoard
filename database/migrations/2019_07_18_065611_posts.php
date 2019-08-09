@@ -15,10 +15,12 @@ class Posts extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id');
             $table->string('title');
             $table->string('price');
+            $table->string('country');
             $table->string('currency');
-            $table->string('description');
+            $table->longText('description');
             $table->string('category')->nullable(true);
             $table->longtext('tags')->nullable(true);
             $table->longText('images');
