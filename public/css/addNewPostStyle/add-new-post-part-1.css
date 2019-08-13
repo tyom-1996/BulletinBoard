@@ -96,7 +96,6 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
 }
 
 .input-label{
@@ -358,4 +357,8 @@ body{
 
 .classified-tag-delete-btn:hover{
     background-position: right -11px;
+}
+
+.error-categories{
+    background: #c7282838;
 }

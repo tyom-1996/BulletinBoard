@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="{{asset('/css/loginStyle/main.css')}}">
     <link rel="stylesheet" href="{{asset('/css/loginStyle/login.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/header_from_login.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -34,20 +35,6 @@
                         <input class="input-text" placeholder="Что ищем?" maxlength="80" autocomplete="off" value="" id="search-query">
                     </div>
 
-                    <div class="select-category  select-menu">
-                        <div class="separator"></div>
-                        <div class="label " data-open="category-results" data-nextmenu="location-results">
-                            <span>Все рубрики</span>
-                            <i style="transform: rotate(180deg);font-size: 10px" class="fas fa-chevron-up"></i>
-                        </div>
-                    </div>
-                    <div class="select-location select-menu">
-                        <div class="separator"></div>
-                        <div class="label " data-open="location-results" data-nextmenu="category-results">
-                            <span>Вся страна</span>
-                            <i style="transform: rotate(180deg);font-size: 10px" class="fas fa-chevron-up"></i>
-                        </div>
-                    </div>
                     <div class="search-btn">
                         <button style="cursor:pointer;" class="search" type="submit">
                             <i class="fas fa-search"></i>

@@ -71,9 +71,9 @@
                     </div>
                     <div class="select-inp-bl">
                         <select class="input-select style-1  select2-initialized"  type="price-select" name="currency" tabindex="-1" title="" style="/* display: none; */">
-                            <option value="ru" selected="selected">RU</option>
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
+                            <option value="RU" selected="selected">RU</option>
+                                <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
                         </select>
                     </div>
 
@@ -146,12 +146,12 @@
                 </div>
 
 
-                <div class="default-row ">
+                <div class="default-row" style="padding: 10px;">
                     <label for="classified-category-input" class="input-label required">Категории</label>
                     <div class="category-inp-block" style="width: 100%;margin-right: 0;">
-                        <select id="classified-category-input" class="input-text" name="category" >
-                            <option value=""></option>
-                        </select>
+
+                        @include('includes.categories')
+
                     </div>
                 </div>
 

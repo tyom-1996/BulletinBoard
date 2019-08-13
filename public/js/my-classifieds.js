@@ -67,6 +67,8 @@ function openDeleteModal($this)
             )
 
             deleteClassified($this,$this.data('id'))
+
+
         }else{
             console.log('no')
         }

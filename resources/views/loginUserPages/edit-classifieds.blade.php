@@ -15,9 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/global.js')}}"></script>
-    <script src="{{asset('js/add-new-post.js')}}"></script>
     <script src="{{asset('js/edit-post.js')}}"></script>
-    <title>Новое объявление</title>
+    <title>Изменить объявление</title>
 </head>
 
 <body>
@@ -29,8 +28,8 @@
     <div class="padding-block">
         <div class="center-my-classifieds-block">
 
-            <form action="/edit-classified" method="post" id="new-classified-form" enctype="multipart/form-data">
-                <input type="hidden" name="product_id" value="{{$post_data['id']}}">
+            <form action="/edit-post" method="post" id="new-classified-form" enctype="multipart/form-data">
+                <input type="hidden" name="product_id" value="{{$post_data['id']}}" class="product_id">
                 {{csrf_field()}}
                 <div class="new-classified-steps">
                     <div class="steps-content">
@@ -67,13 +66,24 @@
                     </div>
                     <div class="select-inp-bl">
                         <select class="input-select style-1  select2-initialized"  type="price-select" name="currency" tabindex="-1" title="" style="/* display: none; */">
-                            <option value="ru" selected="selected">RU</option>
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
+
+                            @php
+                                $currency = ['RU','USD','EUR'];
+                            @endphp
+
+                            @for($i = 0;$i<count($currency);$i++)
+                                @if($currency[$i] == $post_data['currency'])
+                                    <option style="text-transform: uppercase" value="{{$currency[$i]}}" selected="selected">{{$currency[$i]}}</option>
+                                @else
+                                    <option style="text-transform: uppercase" value="{{$currency[$i]}}">{{$currency[$i]}}</option>
+                                @endif
+                            @endfor
+
                         </select>
                     </div>
 
                 </div>
+
 
 
                 <div class="default-row ">
@@ -88,6 +98,31 @@
                 {{--Upload images--}}
 
                 <div class="default-row " id="classified-photos">
+
+                    <div class="exist_images" >
+
+                        @php
+                            $images = !empty($post_data['images']) ? json_decode($post_data['images']) : [];
+                        @endphp
+
+                        @foreach($images as $key => $value)
+                            <div class="upload-img-item">
+                                <label class="upload-photo-btn" for="" data-key="{{$key}}">
+                                    <svg id="svg-id-close" class="delete-exist-photo" viewBox="0 0 32 32">
+                                        <path d="M16,0C7.164,0,0,7.163,0,16s7.164,16,16,16c8.837,0,16-7.163,16-16S24.837,0,16,0z M16,30.031 C8.28,30.031,2,23.72,2,16S8.28,2,16,2s14,6.28,14,14S23.72,30.031,16,30.031z M21.657,10.343c-0.391-0.391-1.024-0.391-1.415,0 L16,14.585l-4.243-4.242c-0.391-0.391-1.024-0.391-1.414,0c-0.391,0.391-0.391,1.024,0,1.414L14.585,16l-4.242,4.243 c-0.391,0.391-0.391,1.024,0,1.415c0.39,0.39,1.023,0.39,1.414,0L16,17.415l4.242,4.243c0.391,0.39,1.024,0.39,1.415,0 c0.39-0.391,0.39-1.024,0-1.415L17.414,16l4.243-4.243C22.047,11.367,22.047,10.733,21.657,10.343z"></path>
+                                    </svg>
+                                    <span>
+                                        <img class="thumb" src="{{$value}}">
+                                    </span>
+                                </label>
+                                <div class="previewImg"></div>
+                            </div>
+                        @endforeach
+
+
+                    </div>
+
+
 
                     <div class="upload-img-item">
                         <div class="photo-main">
@@ -199,7 +234,7 @@
                         <svg id="svg-id-arrow-rounded" viewBox="0 0 32 32" style="transform: rotate(0deg); fill: white;">
                             <path d="M16,0C7.163,0,0,7.163,0,16c0,8.836,7.163,16,16,16s16-7.164,16-16C32,7.163,24.837,0,16,0z M16,30 C8.28,30,1.969,23.72,1.969,16S8.28,2,16,2s14,6.28,14,14S23.72,30,16,30z M15.979,8.043l-6.062,5.906 c-0.195,0.195-0.293,0.451-0.293,0.707s0.098,0.512,0.293,0.707c0.391,0.391,1.023,0.391,1.414,0l3.68-3.68V23.01 c0,0.553,0.448,1,1,1s1-0.447,1-1V11.746l3.618,3.617c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414L15.979,8.043z"></path>
                         </svg>
-                        <span class="label" >Разместить объявление</span>
+                        <span class="label" >Сохранить изменения</span>
                     </button>
                 </div>
 

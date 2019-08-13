@@ -46,18 +46,25 @@ Route::get('/socket','mainController@socket');
 
 //Delete
 
-Route::post('/delete-classified','postController@deleteMyClassifieds');
+Route::post('/delete-classified','postController@deleteMyPost');
 
 //Edit
 
-Route::get('/edit-classified/{id}','postController@editClassifiedsPage');
-Route::post('/edit-classified','postController@editMyClassifieds');
+Route::get('/edit-post/{id}','postController@editClassifiedsPage')->name('edit-post');
+Route::post('/edit-post','postController@editMyPost');
+
+
+Route::get('/post/{id}','postController@singlePostPage')->name('single-post');
+
+Route::post('/delete-image','postController@deletePostImage');
 
 //TEST
 
 Route::get('/chat-bot', function () {
     return view('test.botTest');
 });
+
+
 
 
 

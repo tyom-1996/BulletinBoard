@@ -40,7 +40,6 @@ class postController extends Controller
 
     public function addNewProduct(Request $request)
     {
-//        dd($request->input());
 
         $files = $request->file();
         $user_id = Auth::id();
@@ -68,12 +67,12 @@ class postController extends Controller
     }
 
 
-    public function deleteMyClassifieds(Request $request)
+    public function deleteMyPost(Request $request)
     {
         if($request->ajax())
         {
             $id = $request->input('id');
-            Post::DeleteClassifiedsInDatabase($id);
+            Post::DeletePostInDatabase($id);
             return response()->json('deleted');
         }
     }
@@ -83,14 +82,80 @@ class postController extends Controller
     {
         $id = $request->id;
         $post_data = Post::GetPostByID($id);
-        return view('loginUserPages/edit-classifieds',array('post_data' => $post_data));
-
+        if ( $post_data != null )
+        {
+            return view('loginUserPages/edit-classifieds',array('post_data' => $post_data));
+        }
+        else
+        {
+            return redirect()->route('myClassifieds');
+        }
     }
 
 
-    public function editMyClassifieds(Request $request){
+    public function editMyPost(Request $request){
 
-        dd($request->input());
-        //        $update_data =
+        $files = $request->file();
+        $post_id = $request->input('product_id');
+
+        if ( !empty(Post::GetPostImagesByID($post_id)) ){
+            $images = json_decode(Post::GetPostImagesByID($post_id));
+        }else{
+           $images = [];
+        }
+
+        // Validate Images
+
+        $all_images = postController::imagesValidate($files, $request,$images);
+
+        $insert_data = $request->input();
+        $insert_data['tags'] =!empty( $request->input('tags')) ? $request->input('tags') : [];
+        $insert_data['status'] = '0';
+        $insert_data['user_id'] = Auth::id();
+
+        Post::updatePostData($insert_data,$all_images,$post_id);
+        return redirect()->route('myClassifieds');
     }
+
+
+
+    public static function imagesValidate($files, $request,$images)
+    {
+        $user_id = Auth::id();
+
+        foreach ($files as $key => $value){
+            $request->validate([ $key => 'image|mimes:jpeg,png,jpg,gif,svg', ]);
+            $image_new_name = Str::random(7).'_'.$user_id.'.'.request()->$key->getClientOriginalExtension();
+            $images[] = asset("product-images/".$image_new_name) ;
+
+            request()->$key->move(public_path("product-images"), $image_new_name);
+        };
+
+        return $images;
+    }
+
+
+    public function deletePostImage(Request $request)
+    {
+        if($request->ajax())
+        {
+            $key = $request->input('key');
+            $product_id = $request->input('product_id');
+
+            Post::deletePostImageInDB($key,$product_id);
+            return response()->json('deleted');
+        }
+    }
+
+    public function singlePostPage(Request $request)
+    {
+        $id = $request->id;
+//        dd($id);
+
+        return view('loginUserPages.single_post');
+    }
+
+
+
+
 }

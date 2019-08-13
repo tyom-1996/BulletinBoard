@@ -231,7 +231,7 @@ body{
 }
 
 .balance-info .label {
-    padding: 7px 10px;
+    padding: 7px 0 7px 10px;
     font-size: 15px;
 }
 
@@ -633,4 +633,62 @@ summary:active,summary:focus{
     height: 100vh;
     position: fixed;
     background: #0000007a;
+}
+
+
+
+/*response*/
+
+@media (max-width:450px) {
+    .content-left-menu{
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        min-height: unset;
+    }
+
+    .my-classifieds .menu-item{
+        margin: 0!important;
+    }
+
+    .content-right-header{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .content-right-header-left-bl{
+        width: 100%;
+    }
+    .content-right-header-right-bl{
+        width:100%;
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .content-right-menu{
+        margin-top: 43px;
+    }
+
+    .balance-info > .label{
+        font-size: 12px;
+    }
+
+    .money-count{
+        font-size: 13px;
+    }
+
+    .money-currency{
+        font-size: 9px;
+        right: 4px;
+    }
+
+    .add-balance-button{
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px!important;
+        padding: 8px 15px 8px 15px!important;
+    }
 }

@@ -160,7 +160,7 @@ $(document).ready(function(){
 
     $(document).on('click','.classified-tag-delete-btn',function () {
 
-        var data_id = $(this).data('id');
+        let data_id = $(this).data('id');
 
         $(this).parent().remove();
 
@@ -180,6 +180,7 @@ $(document).ready(function(){
         event.preventDefault()
 
         let submit = true;
+        let categories_validate = false;
 
         $('.required-field').each(function(){
             if ($(this).val() == '')
@@ -190,19 +191,24 @@ $(document).ready(function(){
         })
 
 
-
         if (!$('.classified-tags-hiden-input').find('input').hasClass('hidden-tags-input'))
         {
             submit = false;
             $('#classified-tags-input').addClass('error-border')
-            console.log('chka')
         }
 
-        if (!submit)
+
+        $('.cat-item input.hidden').each(function () {
+            if ($(this).prop('checked'))  categories_validate = true;
+        })
+
+        if(categories_validate == false) $('.category-inp-block').parent().addClass('error-categories')
+
+        if ( !submit )
         {
-            return false;
+            if (categories_validate == false) return false;
         }else{
-            $('#new-classified-form').submit();
+            if (categories_validate == true) $('#new-classified-form').submit();
         }
     })
 

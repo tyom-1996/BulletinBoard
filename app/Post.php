@@ -4,6 +4,7 @@ namespace App;
 use Auth;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Post extends Model
 {
    protected $primaryKey = 'id';
@@ -20,12 +21,12 @@ class Post extends Model
        $post->currency =$save_data['currency'] ;
        $post->description =$save_data['description'] ;
        $post->images = json_encode($images);
+       $post->category = $save_data['category'];
        $post->tags = json_encode($save_data['tags']);
-//       $post->category = $save_data['category'];
-       $post->category = 'category';
        $post->allow_comments = isset($save_data['allow_comments']) ? $save_data['allow_comments'] : 0 ;
        $post->status =$save_data['status'] ;
        $post->country =$save_data['country'] ;
+
        $post->save();
    }
 
@@ -67,20 +68,57 @@ class Post extends Model
     }
 
 
-    public static function DeleteClassifiedsInDatabase($id)
+    public static function GetPostImagesByID($id)
+    {
+        $post_data = Post::find($id);
+        if (isset($post_data->images) && !empty($post_data->images))
+        {
+           return $post_data->images;
+        }else{
+            return [];
+        }
+    }
+
+
+    public static function DeletePostInDatabase($id)
     {
        Post::where('id', '=', $id)->delete();
     }
 
-//
-//    public static function insertInCategoryTable()
-//    {
-//        $data = array(
-//            array('short_name'=>'cat-1', 'category_name'=> 'dwdw', 'svg_content'=> 'dwdw')
-//        );
-//
-//        Post::insert($data);
-//    }
+
+    public static function updatePostData($update_data,$images,$post_id)
+    {
+
+        $post = Post::find($post_id);
+        $post->user_id = $update_data['user_id'];
+        $post->title = $update_data['name'];
+        $post->price = $update_data['price'];
+        $post->currency =$update_data['currency'] ;
+        $post->description =$update_data['description'] ;
+        $post->images = json_encode($images);
+        $post->category = $update_data['category'];
+        $post->tags = json_encode($update_data['tags']);
+        $post->allow_comments = isset($update_data['allow_comments']) ? $update_data['allow_comments'] : 0 ;
+        $post->status =$update_data['status'] ;
+        $post->country =$update_data['country'] ;
+        $post->save();
+    }
+
+
+    public static function deletePostImageInDB($key,$product_id)
+    {
+        $post = Post::find($product_id);
+        $images = json_decode($post->images);
+        unset($images[$key]);
+        $new_images_array = [];
+        foreach ($images as $key => $value)
+        {
+            $new_images_array[] = $value;
+        }
+
+        $post->images = json_encode($new_images_array);
+        $post->save();
+    }
 
 
 

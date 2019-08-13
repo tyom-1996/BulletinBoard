@@ -92,3 +92,19 @@ button.button-new-announcement:hover{
     height: 20px;
     fill: #fff;
 }
+
+.main-search form {
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 69%;
+    justify-content: space-between;
+    width: 78%;
+    max-width: 515px;
+}
+
+.search-btn {
+    width: 7%;
+    max-width: 36px;
+}

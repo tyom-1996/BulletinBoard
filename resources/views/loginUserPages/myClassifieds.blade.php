@@ -46,7 +46,7 @@
 
 <style>
     #profile-photo-block .image{
-        background-image: url('{{$profile_photo}}');"
+        background-image: url('{{$profile_photo}}')
     }
 </style>
 
@@ -190,15 +190,15 @@
 
                                                         <div class="classifieds-action-block hidden">
 
-{{--                                                            <div class="delete-classified" onclick="deleteClassified(event,{{$value[$i]['id']}})"><i class="far fa-trash-alt"></i></div>--}}
                                                             <div class="delete-classified"  data-id="{{$value[$i]['id']}}"><i class="far fa-trash-alt"></i></div>
 
-                                                            <div class="edit-classified"><i class="far fa-edit"></i></div>
+                                                            <a href="{{route('edit-post', ['id' => $value[$i]['id']])}} " target="_blank" class="edit-classified"><i style="color: black;" class="far fa-edit"></i>  </a>
+
                                                         </div>
                                                         <div class='fl-100 classified-summary'>
                                                             <div class='name title' >
                                                                 <h4>
-                                                                    <a href='https://obyava.ua/ru/uslugi-ekskavatora-pogruzchika-samosvala-4107996.html' title='Объявление Услуги экскаватора, погрузчика, доставка стройматериалов'>
+                                                                    <a href='{{route('single-post', ['id' => $value[$i]['id']])}}' title='Объявление Услуги экскаватора, погрузчика, доставка стройматериалов'>
                                                                         {{$value[$i]['title']}}
                                                                     </a>
                                                                 </h4>
@@ -235,8 +235,6 @@
                             </div>
                         </div>
 
-
-
                         </div>
                     {{-------------END right BODY------------}}
 
@@ -264,7 +262,7 @@
 </section>
 
 
-@include('includes.footer');
+@include('includes.footer')
 
 
 </body>
