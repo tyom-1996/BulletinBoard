@@ -20,8 +20,8 @@ Route::get('/my-messages','profileController@myMessages')->name('myMessages');
 
 //NEW POST;
 
-Route::get('/new-post-part-1','postController@open_New_Post_Page_Part_1');
-Route::get('/new-post-part-2','postController@open_New_Post_Page_Part_2')->name('new-post-part-2');
+//Route::get('/new-post-part-1','postController@open_New_Post_Page_Part_1');
+//Route::get('/new-post-part-2','postController@open_New_Post_Page_Part_2')->name('new-post-part-2');
 
 //LOGOUT
 
@@ -41,22 +41,19 @@ Route::post('/delete_photo','profileController@deleteProfilePhoto');
 Route::post('/add-new-product','postController@addNewProduct');
 
 
-Route::get('/socket','mainController@socket');
-
-
 //Delete
 
-Route::post('/delete-classified','postController@deleteMyPost');
+//Route::post('/delete-classified','postController@deleteMyPost');
 
 //Edit
 
-Route::get('/edit-post/{id}','postController@editClassifiedsPage')->name('edit-post');
-Route::post('/edit-post','postController@editMyPost');
+//Route::get('/edit-post/{id}','postController@editClassifiedsPage')->name('edit-post');
+//Route::post('/edit-post','postController@editMyPost');
 
 
 Route::get('/post/{id}','postController@singlePostPage')->name('single-post');
 
-Route::post('/delete-image','postController@deletePostImage');
+//Route::post('/delete-image','postController@deletePostImage');
 
 //TEST
 
@@ -67,20 +64,14 @@ Route::get('/chat-bot', function () {
 
 
 
+Route::post('/delete-image','ProductController@deletePostImage');
+Route::get('/new-post-part-2','ProductController@OpenNewProductPart2')->name('new-post-part-2');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes Firebase
-|--------------------------------------------------------------------------
 
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-*/
-Route::get('/firebase', function () {
-    return view('test');
-});
+Route::resource('product','ProductController');
 
-Route::post('/test',function(){
-    var_dump('test');
-});
+
+
+
+
+

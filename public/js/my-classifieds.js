@@ -36,13 +36,20 @@ function openActionBlock()
 function deleteClassified($this,id)
 {
 
-    ajaxRequest('delete-classified',{id:id},function(r){
-
-        if (r == 'deleted')
-        {
-            $this.closest('.content-scrolling-top-item').remove()
+    $.ajax({
+        type:'POST',
+        url:`http://localhost:8000/product/${id}`,
+        data:{
+            id:id,
+            _method: 'DELETE'
+        },
+        success:function(r){
+            if (r == 'deleted')
+                $this.closest('.content-scrolling-top-item').remove()
         }
-    })
+    });
+
+
 
 }
 

@@ -1,7 +1,7 @@
 
 $(document).mouseover(function (event){
 
-    var div = $('.button-new-announcement');
+    var div = $('.button-new-announcement,.add-new-post-btn');
 
     if (!div.is(event.target) && div.has(event.target).length === 0) {
 

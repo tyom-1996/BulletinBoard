@@ -1,0 +1,1330 @@
+<body>
+
+<style>
+  
+  .quest-item.span6{
+    border: 5px solid #0f7708;
+    padding: 6px 4px 39px 59px;
+    margin-bottom: 30px;
+    background: white;
+  }
+
+  body{
+        background: silver;
+  }
+</style>
+
+
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <!-- <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"></a></div> -->
+  </div>
+<!--End-breadcrumbs-->
+
+
+
+<script type="text/javascript"> 
+
+$("")
+  
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+
+function f(){
+  alert("ok");
+  return "bye";
+}
+
+</script>
+
+<div class="container" style="padding: 10px;">
+  <h3>ՏԵՍԱԿԱՆ ՆՅՈՒԹԵՐ</h3>
+<label>Մոդուլ</label>
+
+	<div class="dashboard">
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տեսակի զանգվածներ կան PHP -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">1. <strong>Թվային </strong>- այն զանգվածները, որոնց տարրերն իրարից տարբերվում են թվային ինդեքսներով</span></p>
+         <p><span style="font-size: 14px;">2. <strong>Ասոցիատիվ &nbsp;</strong>- այն զանգվածները, որոնց ինդեքսները բառեր են</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել փոփոխականի տեսանելիության տիրույթի մակարդակները PHP -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ծրագրավորման PHP լեզվում տվյալներն ունենում են տեսանելիության երեք մակարդակ:</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Լոկալ </strong>- ֆունկցիայի ներսում հայտարարված կամայական փոփոխական համարվում է լոկալ փոփոխական և այն տեսանելի է միայն ֆունկցիայի ներսում</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Գլոբալ </strong>- գլոբալ փոփոխականները նկարագրվում են ֆունկցիայից վեր, սակայն դրանք տեսանելի չեն ֆունկցիայի ներսում, քանի դեռ չի օգտագործվել global հրամանը<strong><br></strong>Օրինակ:<br><strong>$x = 4;</strong></span><br><span style="font-size: 14px;"><strong><br>function F(){<br>&nbsp; &nbsp;$x = 0;<br>}</strong><br><br>F(); print $x;&nbsp;//4 ֆունկցիայի ներսում $x -ը գլոբալ չէ<br><br><strong>$x = 4;&nbsp;</strong></span><br><span style="font-size: 14px;"><strong><br>function f(){<br>&nbsp; global $x;<br>&nbsp; &nbsp;$x=0;<br>}</strong></span><br><span style="font-size: 14px;"><strong><br>F();</strong></span><br><span style="font-size: 14px;"><strong><br>print $x;&nbsp;</strong>//0<br><br><br></span></p>
+            </li>
+         </ol>
+         <p><span style="font-size: 14px;"><strong>Սուպեր գլոբալ</strong> - տեսանելիության այս տիրույթը բաց է և հասանելի է պրոյեկտի կամայական կետից</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ արդյունք կլինի էկրանին</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$x = 4;</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$y = &amp;$x;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$x=0;</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print $x . “ “ . $y;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Էկրանին կհայտնվի 0 0 տեքստը, քանի որ &amp; նշանի կիրառման դեպքում $y փոփոխականի մեջ պահվում է ոչ միայն $x -ի արժեքը, այլ նաև հիշողության մեջ նրա հասցեն հետևաբար $y և $x -ը հղում են կատարում նույն հասցեին և նրանցից կամայական մեկի փոփոխությունը հանգեցնում է մյուսի փոփոխությանը.</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է ֆունկցիայի պարամետրերի hint -ը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">PHP -ում հնարավոր է սամանափակում տալ ֆունկցիային փոխանցվող պարամետրերին: օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>function (Array $x){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այս դեպքում ֆունկցիային հնարավոր է փոխանցել միայն զանգված, մյուս տիպերի դեպքում կստանանք Error:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">PHP 5 -ում գործում են երկու տեսակի hint -եր</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Array</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Object</span><span style="font-size: 14px;"><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Այդ թվում մեր կողմից ստեղծված կլասները</span></p>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+         <p dir="ltr"><span style="font-size: 14px;">PHP 7 -ում կա նաև String, Int և այլն.</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է հաստատունը PHP -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Հաստատունը որոշակի անվանում ունեցող տարածք է հիշողության մեջ, որը ի տարբերություն փոփոխականների երբեք չի փոխում իր արժեքը.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Հաստատունները նկարագրվում են define ֆունկցիայի օգնությամբ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>define("PI", 3.14);</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print PI;</strong>&nbsp;//3.14</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">defined ֆունկցիայի օգնությամբ կարող ենք ստուգել արդյո՞ք այդ անունով հաստատուն արդեն նկարագրված չէր</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>if( ! defined(“PI”) ){</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">define( “PI”, 3.14);</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է ցույց տալիս __FILE__ հաստատունը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">__FILE__ -ը վերադարձնում է տվյալ ֆայլի բացարձակ հասցեն</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ո՞րն է մեկ և կրկնակի ապաթարցների տարբերությունը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կրկնակի ապաթարցների ներսում հնարավոր է օգտագործել փոփոխականներ, մյուսի դեպքում՝ ոչ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$x = “Hayk”;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print &nbsp;“&lt;h1&gt; Hello $x; &lt;/h1&gt;”;</strong> // Hello Hayk</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print &nbsp;‘&lt;h1&gt; Hello $x; &lt;/h1&gt;’;</strong> // Hello $x</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ինչպե՞ս կարելի է տեղեկություն ստանալ, թե ինչ browser -ից է օգտվում User -ը</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Կարող ենք դիմել $_SERVER['HTTP_USER_AGENT']; փոփոխականին</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Կարող ենք օգտվել get_browser() ֆունկցիայից</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է իրենից ներկայացնում սուպերգլոբալ զանգվածը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">PHP -ում սուպերգլոբալ են այն զանգվածները, որոնք տեսանելի են պրոյեկտի բոլոր կետերից.&nbsp;</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>$_POST</strong> &nbsp;- ցույց է տալիս post -ով եկած տվյալները</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>$_GET</strong>&nbsp;- ցույց է տալիս get -ով եկած տվյալները</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>$_REQUEST</strong>&nbsp;- ցույց է տալիս և post և get -ով եկած տվյալները</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>$_FILES </strong>- ցույց է տալիս ֆայլերը, որոնք user -ը փորձում է upload անել</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>$_SERVER </strong>- ցույց է տալիս ինֆորմացիա դեպի server եկած տվյալների մասին (օրինակ՝ ինչ browser -ից է եկել տվյալը, ip հասցեն, post, թե get և այլն)&nbsp;</span></p>
+            </li>
+         </ol>
+         <p><span style="font-size: 14px;">&nbsp; &nbsp;6.<strong>&nbsp;$_SESSION</strong> - պահպանում է session -ի տվյալները&nbsp;</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա POST/GET -ի միջև</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">POST -ը և GET -ը դեպի սերվեր տվյալներ ուղարկելու եղանակներ են:</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>GET </strong>- տրամադրում է հիշողության ավելի փոքր տարածք, &nbsp;ուղարկվող տվյալները բացահայտ երևում են URL -ում, օրինակ՝ ?name=Hayk&amp;password=111, անվտանգ չէ</span></p>
+            </li>
+         </ol>
+         <p><span style="font-size: 14px;">&nbsp; &nbsp;2. <strong>POST </strong>- տրամադրում է հիշողության ավելի մեծ տարածք, տվյալները չեն&nbsp; &nbsp; &nbsp;երևում browser -ում, հետևաբար անվտանգությունն ավելի բարձր է այստեղ.</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա isset և empty, unset ֆունկցիաների միջև</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Isset - ստուգում է արդյո՞ք փոփոխականը հայտարարված է եղել թե ոչ</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Empty - ստուգում է արդյո՞ք դատարկ է տվյալ փոփոխականը (զանգվածը)</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Unset - ջնջում է տվյալ փոփոխականը<br><strong>$x = 4;</strong><br></span><strong><span style="font-size: 14px;">unset($x);<br>print $x; //error</span></strong></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչպես կարելի է ստեղծել ֆայլեր և թղթապանակներ PHP -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ֆայլեր ստեղծելու համար օգտվում ենք fopen ֆունկցիայից</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ՝</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">&nbsp;$f = fopen(“erg.mp3”, “w”); //ստեղծվում է erg.mp3 ֆայլը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">w -ն նշանակում է, որ ֆայլը բացվում է գրելու ռեժիմում, այսինքն նրա նկատմամբ հնարավոր է կիրառել fwrite ֆունկցիան.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">w - ի փոխարեն կարող է լինել նաև</span></p>
+         <ul>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">r&nbsp;- կարդալու ռեժիմ</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">r+&nbsp;- կարդալու/գրելու ռեժիմ (ցուցիչը տեղադրում է ֆայլի սկզբում)</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">w+&nbsp;- գրելու/կարդալու ռեժիմ (ցուցիչը տեղադրում է ֆայլի վերջում՝ ջնջելով պարունակությունը)</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">a&nbsp;- գրելու այս ռեժիմում թույլ է տրվում ավելացնել ֆայլին ինֆորմացիա առանց նախկինը ջնջելու</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">a+ &nbsp;- գրելու/կարդալու այս ռեժիմում նախկին պարունակությունը չի ջնջվում&nbsp;</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">x &nbsp;- ստեղծում է նոր ֆայլ գրելու ռեժիմում, վերադարձնում false, եթե ֆայլն արդեն կար</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">x+ &nbsp;- ստեղծում է նոր ֆայլ գրելու/կարդալու ռեժիմում, վերադարձնում false, եթե ֆայլն արդեն գոյություն ունի:&nbsp;</span></p>
+            </li>
+         </ul>
+         <p dir="ltr"><span style="font-size: 14px;">Թղթապանակ ստեղծելու համար օգտվում ենք mkdir ֆունկցիայից.</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է SESSION -ը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Session -ը հիշողության տարածք է սերվերում, որտեղ հնարավոր է պահպանել տարբեր ծավալի ինֆորմացիա. Session -ը ավտոմատ կերպով ջնջվում է երբ Browser -ը փակվում է:&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Session -ի հետ աշխատանքը սկսվում է session_start() ֆունկցիայով, այնուհետև կարող ենք տարրեր ավելացնել $_SESSION սուպերգլոբալին. Session -ի տարրեր հնարավոր է ջնջել unset ֆունկցիայիով, իսկ ամբողջ սեսսիան կարելի է հեռացնել session_destroy ֆունկցիայի օգնությամբ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է COOKIE -ն</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Cookie -ն հիշողության տարածք է, որը պահպանվում է Browser -ում:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Cookie -ն ստեղծվում է setcookie ֆունկցիայի օգնությամբ:&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">setcookie(x,y,z)</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">X - անուն</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Y - արժեք</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Z - տևողություն, օրինակ՝ time() + 86400 -ի դեպքում կպահպանվի մեկ օր</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Cookie -ն ջնջվում է setcookie ֆունկցիայիով, սակայն տևողության համար ընտրվում է բացասական արժեք: օրինակ՝ time() - 86400</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ ֆիլտրեր կան PHP -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">php -ում filter_var ֆունկցիայի օգնությամբ կարելի է վալիդացիայի ենթարկել ինֆորմացիան:&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ՝</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Ստուգելու համար արդյո՞ք $email -ը ճիշտ է գրված կարելի է գրել<br><strong>if( filter_var($email, FILTER_VALIDATE_EMAIL) === true)</strong></span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Կան նաև այլ հաստատուններ</span><span style="font-size: 14px;"><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;"><strong>FILTER_VALIDATE_INT</strong></span></p>
+                  </li>
+                  <li dir="ltr">
+                     <p dir="ltr"><strong><span style="font-size: 14px;">FILTER_VALIDATE_FLOAT</span></strong></p>
+                  </li>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;"><strong>FILTER_VALIDATE_STRING</strong></span></p>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+         <p dir="ltr"><span style="font-size: 14px;">Filter_var ֆունկցիան հնարավորություն է տալիս նաև ֆիլտրել տրված փոփոխականը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ $email -ի միջից բոլոր ավելորդ սիմվոլները (օրինակ / ) կարելի է հեռացնել այսպես</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$email = filter_var($email, FILTER_SANITIZE_EMAIL);</strong></span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա warning -ի և fatal error -ի միջև</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Warning - ի դեպքում սկրիպտը շարունակում է աշխատել</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Fatal Error -ի դեպքում սկրիպտը դադարում է իր աշխատանքը</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>. Ի՞նչ տարբերություն կա include -ի և require -ի միջև</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Երկու ֆունկցիաներն էլ օգտագործվում են ֆայլեր կցցելու համար, սակայն եթե ֆայլը չի հայտնաբերվում include -ը հանգեցնում է warning -ի իսկ require -ը fatal error -ի </span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է վիրտուալ հոստը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Վիրտուալ հոստը մեխանիզմ է, որը թույլ է տալիս փոխել localhost դոմեինի անունը այլ անվան. Այսպիսով վիրտուալ հոստի կիրառմամբ հնարավոր է այնպես անել, որ օրինակ localhost/project հասցեում գտնվող ֆայլը բացվի project.com հասցեով: Վիրտուալ հոստը տրված դոմեինին օր: project.com - վերագրում է 127.0.0.1 ip հասցեն, արդյունքում դոմեինը բացվում է լոկալ սերվերում;</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ նշանակություն ունի OOP -ն վեբ ծրագրավորման մեջ</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">OOP -ն ծրագրավորման ուղղություն է, որտեղ ծրագրավորումը տեղի է ունենում կլասների և օբյեկտների օգնությամբ: OOP -ն հնարավորություն է տալիս ունենալ հստակ մասերի բաժանված , ճիշտ դասավորված կոդ, խուսափել կոդի առանձին մասերի կրկնումից և այլն:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է կլասը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կլասը ծրագրավորողի կողմից ստեղծվող տվյալների տիպ է, որը բնութագրվում է դաշտերով և մեթոդներով:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Դաշտերը կլասի ներսում նկարագրվող փոփոխականներ են. Մեթոդները այդ փոփոխականներին կառավարող ֆունկցիաներ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Կլասը կարող է կիրառվել նաև որպես գրադարան, այսինքն հանդես կա որպես ֆունկցիաների խումբ: </span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Հասանելիության ի՞նչ տիպեր կարող են ունենալ կլասի դաշտերը և մեթոդները</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կլասի ներսում դաշտերն ունեն հասանելիության երեք տիպեր</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Public </strong>- բաց հասանելիություն, դաշտեր, որոնք հասանելի են կլասի ներսում և կլասից դուրս</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Private </strong>- փակ հասանելիություն, դաշտեր, որոնք հասանելի են միայն կլասի ներսում</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Protected </strong>- մասնակի &nbsp;հասանելիություն, դաշտեր, որոնք հասանելի են կլասի ներսում և ժառանգ կլասների ներսում:</span></p>
+            </li>
+         </ol>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">class Person{</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public $name;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;private $surname;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;protected $age;</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Person();</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;name = “Hayk”;</strong>&nbsp;//ok</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;surname = “aaa”;</strong>&nbsp;//fatal error</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;age = 54; </strong>//fatal error</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է կոնստրուկտորը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կոնստրուկտորը կլասի ներսում նկարագրվող ստանդարտ ֆունկցիա է, որը առաջինն է աշխատում, երբ կլասից օբյեկտ է ստեղծվում;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Person{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; print “ok”;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Person();</strong> //ok</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ցանկացած կլաս կարող է ունենալ միայն մեկ կոնստրուկտոր, վերջինս սովորական ֆունկցիա, որը կարող է ստանալ պարամետրեր և return անել արժեքներ:</span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Person{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; private $name;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; function __construct($name){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; $this-&gt;name = $name;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; }</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; function sayHello(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; print “Hello “ . $this-&gt;name;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Person(“Hayk”); </strong></span></p>
+         <p><span style="font-size: 14px;"><strong>$obj-&gt;sayHello();</strong> // &nbsp;Hello Hayk</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է կոմպոզիցիան</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կոմպոզիցիան կլասի հատկություն է, որտեղ մեկ կլասը հանդես է գալիս մեկ այլ կլասում որպես դաշտ:&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Կոմպոզիցիայի օգնությամբ հնարավոր է բարձրացնել կոդի հստակության և դասավորվածության մակարդակը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ենթադրենք ունենք կայք, որտեղ տեղի է ունենում գրանցումներ և լոգին:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ընդունենք որ Model կլասի մեջ կան save և getUsers ֆունկցիաներ, որոնցից առաջինը պահպանում է տվյալները, իսկ երկրորդը վերադարձնում ամբողջը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Model{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function getUsers(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function save(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Controller կլասը կառավարում է ամբողջ պրոցեսը և ունի grancum, login, validacia ֆունկցիաներ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Controller{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function grancum(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function login(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function validacia(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Կոմպոզիցիայի օգնությամբ կարող ենք Model կլասը դարձնել Controller -ի համար դաշտ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Controller{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; private&nbsp;$model;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;$this-&gt;model = new Model();</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function grancum(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; function login(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այս դեպքում Controller կլասի ցանկացած մեթոդում հնարավոր է դիմել Model կլասին և կանչել նրա ֆունկցիաները.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Controller{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;private &nbsp; $model;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; $this-&gt;model = new Model();</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; function grancum(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; $this-&gt;model-&gt;save();&nbsp;//կոմպոզիցիա</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; function login(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Մենք կարող էինք, իհարկե, Model -ի ֆունկցիաները նկարագրել Controller -ում, սակայն այս դեպքում կոդն ավելի խճճված է դառնում և ոչ դասավորված:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այսպիսով կոմպոզիցիայի օգնությամբ հնարավոր է դառնում կոդը տրոհել առանձին մասերի և մի կլասը օգտագործել մեկ այլ կլասի ներսում որպես դաշտ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Որո՞նք են OOP -ի հիմնական սկզբունքները</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><strong><span style="font-size: 14px;">Ինկապսուլացիա</span></strong><span style="font-size: 14px;"><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Վերաբերվում է դաշտերի հասանելիության տիպերին և տվյալների վալիդացիային</span></p>
+                  </li>
+               </ol>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Ժառանգում</strong><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Թույլ է տալիս մեկ անգամ գրված կոդը կիրառել տարբեր տեղերում</span></p>
+                  </li>
+               </ol>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Պոլիմորֆիզմ</strong><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Թույլ է տալիս նույն ֆունկցիան իրացնի տարբեր գործողություններ</span></p>
+                  </li>
+               </ol>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Աբստրակցիա</strong><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Թույլ է տալիս կանոններ ավելացնել OOP համակարգին</span></p>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել Ինկապսուլացիան</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ինկապսուլացիան OOP սկզբունքներից առաջինն է, վերջինս վերաբերվում է կլասի private դաշտերին և դրանց մասնակի հասանելիությանը: Ընդհանրապես ծրագրավորման պրոցեսում ընդունված է, որ կլասի դաշտերին պետք է տալ private հասանելիության տիպ, սա հնարավորություն է տալիս խտացնել տվյալի դաշտի կամ մեթոդի օգտագործման սահմանները: Այսինքն, եթե $x դաշտը կայքում օգտագործվում է միայն տվյալ կլասի ներսում, ապա հարկ չկա նրան տալ public հասանելիություն:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Սակայն երբեմն անհրաժեշտ է լինում կլասի դաշտին տալ մասնակի հասանելիություն: Ենթադրենք հնարավոր լինի նրա արժեքը փոխել (set), սակայն չկարողանալ տպել (get) և հակառակը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Դիտարկենք օրինակը.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ունենք Person կլասը, որի դաշտերից մեկը $amount ցույց է տալիս տվյալ մարդու ընթացիկ հաշիվը: Կայքում անհրաժեշտ է տպել այդ թիվը, սակայն չկարողանալ փոխել այն:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Person{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; private &nbsp; $amount;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; $this-&gt;amount &nbsp;= 50;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Person();</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print $obj-&gt;amount; </strong>//fatal error</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ինկապսուլացիայի գաղափարի հիմքում ընկած է դաշտերի հետ աշխատանքը մեթոդներով կազմակերպելու մեջ: Այսպիսով ստեղծենք ֆունկցիա, որը կվերադարձնի amount դաշտը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Person{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; private&nbsp;$amount;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;$this-&gt;amount &nbsp;= 50;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function get_amount(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;return $this-&gt;amount;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Person();</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print $obj-&gt;amount;</strong> //fatal error</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;amount = 700;</strong> //fatal error</span></p>
+         <p><span style="font-size: 14px;"><strong>print $obj-&gt;get_amount();</strong> //50</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է իրենից ներկայացնում ռելացիոն բազան</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Ռելացիոն բազան տվյալների բազայի տեսակ է, որտեղ տվյալները պահպանվում են առանձին աղյուսակներում, որոնք իրար հետ գտնվում են կապերի մեջ:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել Ժառանգումը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ժառանգումը թույլ է տալիս խուսափել ավելորդ անգամ նույն դաշտերի և մեթոդների նկարագրությունից:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Element{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;protected $type;</span></strong><span style="font-size: 14px;"> // հասանելի է կլասի ներսում &nbsp;և ժառանգներին</span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; public function add(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;print “&lt;input type=’” . $this-&gt;type . “‘&gt;”;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class PasswordElement extends Element{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function __construct(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;$this-&gt;type = “password”;</span></strong><span style="font-size: 14px;"> // դիմում ենք հիմնային կլասի protected </span><span style="font-size: 14px;">դաշտին</span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; }</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new PasswordElement();</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;add()</strong>; //էկրանին կհայտնվի Input type = password</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այսպիսով ժառանգման օգնությամբ մենք խուսափեցինք type և add ֆունկցիաների վերահայտարարումից:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել Պոլիմորֆիզմը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Պոլիմորֆիզմը թույլ է տալիս նույն անունը ունեցող ֆունկցիան ժառանգման դեպքում կատարի տարբեր գործողություններ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Shape{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;function makeres(){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; &nbsp; print “ok;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Uxxankyun extends Shape{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;private $a;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;private $b;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;function __construct($a,$b){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;a = $a;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;b = $b;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; }</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; function makeres(){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; return $this-&gt;a * $this-&gt;b;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Qarakusi extends Shape{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;private $a;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;function __construct($a){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; &nbsp; $this-&gt;a = $a;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;function makeres(){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; return $this-&gt;a * $this-&gt;a;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp;}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ենթադրենք ունենք հետևյալ ֆունկցիան&nbsp;<br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>function hashvel(Shape $s){</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>&nbsp; &nbsp; print $s-&gt;makeres();&nbsp;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Կանչենք այս ֆունկցիան</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>hashvel(new Shape() )</strong> //ok</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>hashvel(new Uxxankyun(4,5) )</strong> //20</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>hashvel(new Qarakusi(4) ) </strong>// 16</span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այսպիսով նույն makeres ֆունկցիան կատարում է տարբեր գործողություններ՝ կախված նրանից, թե որ կլասից է կանչված:</span></p>
+         <p><span style="font-size: 14px;">Նկատենք, որ եթե ժառանգ կլասներից որևէ մեկում բացակայեր makeres ֆունկցիան, ապա ավտոմատ կաշխատեր հիմնային կլասում նկարագրվածը:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել աբստրակցիան</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Աբստրակցիան OOP -ի սկզբունքներից է, որը թույլ է տալիս ստանդարտ կանոններ ավելացնել կլասների կիրառման գործընթացում:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աբստրակտ կլաս -&nbsp;Կոչվում է կլասը, որից հնարավոր չէ ստեղծել օբյեկտ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>abstract class Shape{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new Shape() </strong>//fatal error</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Եթե չկա օբյեկտ, ապա բնական է, որ հնարավոր չէ կանչել նրանում նկարագրված մեթոդները: Այդ մեթոդները կարող է կանչել ժառանգ կլասը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$this-&gt;method_name() </strong>կամ <strong>parent::method_name()</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Պարտադիր չէ, սակայն աբստրակտ կլասը կարող է ունենալ աբստրակտ մեթոդներ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աբստրակտ մեթոդը -&nbsp;կլասում նկարագրվող ֆունկցիա է, որը չունի մարմին և պարտադիր պետք է վերահայտարարվի ժառանգ կլասներում:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>abstract class Shape{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; abstract function makeres(); </span></strong><span style="font-size: 14px;">//աբստրակտ մեթոդ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աբստրակտ մեթոդը չունի մարմին և չի կարող լինել private, հակառակ դեպքում հնարավոր չէր լինի նրան վերահայտարարել:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class Uxxankyun extends Shape{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;/</span></strong><span style="font-size: 14px;">/fatal error - պետք է վերահայտարարել makeres() ֆունկցիան</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աբստրակտ կլասը կարող է չունենալ աբստրակտ մեթոդ, սակայն եթե որևէ կլաս ունի աբստրակտ մեթոդ, ապա այդ կլասը պարտադիր պետք է լինի աբստրակտ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է ինտերֆեյսը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ինտերֆեյսը աբստրակտ կլասի մասնավոր դեպք է</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>interface IMethods {</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ի տարբերություն աբստրակտ կլասի ինտերֆեյսը կարող է ունենալ միայն և միայն աբստրակտ մեթոդներ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>interface IMethods {</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; public function method1();</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; public function methods2()</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այլ տարբերություն է նաև այն, որ մեկ կլասը կարող է ժառանգվել միայն մեկ կլասից, սակայն ցանկացած կլաս կարող է ժառանգվել անսահման ինտերյֆեյսերից:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class my_class implement interface1, interface2{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">&nbsp; &nbsp;//Մեթոդները պետք է պարտադիր վերահայտարարել ինտերֆեյսում</span><br></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ կերպով է հնարավոր բացառել ժառանգումը կամ ֆունկցիայի վերահայտարարումը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Final կլասների կիրառմամբ: Final կլասներից հնարավոր չէ ժառանգել</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>final class A{</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class B extends A</strong> //error</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Final մեթոդները հնարավոր չէ վերահայտարարել ժառանգ կլասներում:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Կարող է՞ կոնստրուկտորը լինել private, հիմնավորել</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Այո, private կոնստրուկտոր ունենալու դեպքում հնարավոր չի լինի ստեղծել օբյեկտ այդ կլասից դուրս:</span></p>
+         <p><span style="font-size: 14px;"><strong>class A {<br><br>&nbsp;private &nbsp;function __construct(){<br>&nbsp;}<br><br>}</strong><br><br><strong>$x = new A();</strong> //error</span></p>
+         <p><br></p>
+         <p><span style="font-size: 14px;">&#8203;Սակայն հնարավոր է օբյեկտ ստեղծել կլասից տվյալ կլասի ներսում: Օրինակ ստատիկ մեթոդի կիրառմամբ:</span></p>
+         <p><span style="font-size: 14px;"><strong>class A {<br><br>&nbsp; &nbsp;private function __construct(){<br>&nbsp; &nbsp;}<br><br>&nbsp; &nbsp;static function create_object(){<br>&nbsp; &nbsp; &nbsp;return new A();<br>&nbsp; &nbsp;}<br><br>}<br><br>$x = A::create_object();<br><br>var_dump($x); </strong>// object<br><br></span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է ստատիկ դաշտը և մեթոդը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ստատիկ պարամետրերը դրանք այն դաշտերն են, որոնցից կարելի է օգտվել առանց կլասից օբյեկտ ստեղծելու.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class A{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public static $x;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public static $y;</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>A::$x = 4;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>A::$y = 8;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print &nbsp;A::$x + A::$y;&nbsp; </strong>//12</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այսպիսով կլասի ստատիկ դաշտերը հնարավոր է կանչել կլասի անուն 4 կետ կիրառելով:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Կլասի ներսում այդ դաշտերին կարելի է դիմել self -ով</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class A{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public static $x;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public static $y;</span></strong></p>
+         <p data-empty="true"><strong><span style="font-size: 14px;"><br></span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; public static gumar(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; return self::$a + self::$b;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>A::$x = 4;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>A::$y = 8;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>print A::gumar();</strong> //12</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Հնարավո՞ր է ստատիկ մեթոդի ներսում օգտագործել $this ցուցիչը:</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Ոչ. &nbsp;ստատիկ մեթոդները կարող են դիմել միայն ստատիկ դաշտերին &nbsp;self -ով: Ընդհանրապես կլասի ներսում գտնվող ոչ ստատիկ դաշտերը բնութագրում են օբյեկտին: Մինչդեռ կլասի ստատիկ դաշտերը և մեթոդները գործում են կլասի սահմաններում, հետևաբար չունեն հասանելիություն $this պարամետրերին:</span></p>
+         <p><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել parent -ի դերը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Parent -ի օգնությամբ ժառանգ կլասը կարող է դիմել հիմնային դաշտի մեթոդին և const դաշտերին:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ինչպե՞ս կարելի է ասոցիատիվ $y զանգվածը դարձնել օբյեկտ</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Օգտվելով անբացահայտ ձևափոխությունից</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">$x = (Object)$y;</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ են իրենցից ներկայացնում magic մեթոդները</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Magic մեթոդները դրանք կլասների ներսում նկարագրվող ֆունկցիաներ են, որոնք ավտոմատ կերպով կանչվում են որոշակի իրավիճակներում:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>__get&nbsp;</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ավտոմատ կերպով կանչվում է երբ դիմում ենք կլասի դաշտերին</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ print $obj-&gt;name; //աշխատում է get -ը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>__set </strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ավտոմատ կերպով կանչվում է երբ փորձում ենք փոխել կլասի դաշտերից որևէ մեկը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ՝ $obj-&gt;age = 80; // աշխատում է set -ը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>__sleep</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աշխատում է, երբ օբյեկտը սերիալիզացիայի է ենթարկվում serialize ֆունկցիայով</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>__wakeup</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աշխատում է, երբ օբյեկտը unserialize է լինում</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>__construct</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աշխատում է, երբ կլասից օբյեկտ է ստեղծվում</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">__<strong>call</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Աշխատում է, երբ կանչվում է կլասի մեթոդներից որևէ մեկը</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել  json_encode և json_decode ֆունկցիաների դերը</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>json_encode</strong> - տրված օբյեկտը վերածում է json string -ի</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>json_decode</strong> -&nbsp;տրված json string -ը վերածում է օբյեկտի</span><span style="font-size: 14px;"><br></span></p>
+               <ol>
+                  <li dir="ltr">
+                     <p dir="ltr"><span style="font-size: 14px;">Եթե երկրորդ պարամետրը լինի true, ապա կվերադառնա ասոցիատիվ զանգված օբյեկտի փոխարեն</span></p>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա սերիալիզացիայի և json_encode/decode -ի միջև</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Օբյեկտների սերիալիզացիան թույլ է տալիս անցում կատարել կոմպլեքս տիպերից դեպի string և հակառակը` օգտագործելով serialize և unserialize ֆունկցիաները:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">JSON -ից տարբերվում է նրանով, որ արդյունքում JSON -ը միշտ ետ է վերադարձնում օբյեկտ, իսկ unserialize -ը հիշում է նախնական տիպը</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>class person{</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;public $name;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;function sayHello(){</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp;print “Hello “ . $this-&gt;name;&nbsp;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">&nbsp; &nbsp;}</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>}</strong></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new person();</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj-&gt;name = “Valod”;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj-&gt;sayHello(); //Hello valod</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj = json_encode($obj);</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = json_decode($obj);</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;sayHello();</strong>&nbsp; &nbsp;//fatal error - &nbsp;ետ է վերադարձել ոչ թե person, այլ գլոբալ Object, որը չունի sayHello ֆունկցիան</span><span style="font-size: 14px;"></span></p>
+         <p data-empty="true"><span style="font-size: 14px;"><br></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new person();</strong></span></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj-&gt;name = “Valod”;</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj-&gt;sayHello(); //Hello valod</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj = serialize($obj);</span></strong></p>
+         <p dir="ltr"><strong><span style="font-size: 14px;">$obj = unserialize($obj);</span></strong></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;sayHello(); // </strong>hello valod</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել stdClass -ների դերը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">stdClass-ները ստանդարտ կլասներ են, թույլ են տալիս ստեղծել օբյեկտներ առանց նախնական կլասի սահմանման.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj = new stdClass();</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>$obj-&gt;name = “hayk”;</strong></span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է կառուցվածքային ծրագրավորումը DESIGN PATTERN</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Կառուցվածքային ծրագրավորումը օբյեկտ կողմնորոշված ծրագրավորման առավել բարձր մակարդակ է, որտեղ կան հայտնի խնդիրների լուծման ստանդարտ օրինակներ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">OOP -ի հայտնի խնդիրներից մեկը հետևյալն է: ենթադրենք կլասի կոնստրուկտորում տեղի է ունենում ինչ-որ ծանր գործընթաց, իսկ կայքի տարբեր հատվածներում ստեղծված են օբյեկտներ այդ կլասից: Ամեն անգամ օբյեկտ ստեղծելով ևս մեկ անգամ փաստորեն ծանրանում է կայքի աշխատանքը: Այդ խնդրի լուծման համար օրինակ ստեղծված է Singletone կառուցվածքը, որը ամեն անգամ օբյեկտ ստեղծելիս միշտ վերադարձնում է նույն instance -ը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այլ կառուցվածքներ են factory, mvc, hmvc, mvvm &nbsp;և այլն:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել MVC կառուցվածքը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">MVC կառուցվածքը վեբ ծրագրավորման ամենատարածված միջավայրն է: Այստեղ ամբողջ կայքը տրոհվում է երեք մասի</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Model - տվյալների բազաների հետ աշխատող կլասներ</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">View - html, css</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Controller - կլաս, որը կապում է Model -ը View -ին</span></p>
+            </li>
+         </ol>
+         <p dir="ltr"><span style="font-size: 14px;">MVC կառուցվածքում բոլոր հարցումները գնում են Controller -ին, վերջինս դիմում է Model -ին ստանում անհրաժեշտ տվյալները և փոխանցում View -ին, որն արդեն ցույց է տալիս այդ էկրանին:&nbsp;</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">MVC կառուցվածքում արգելված է, որպեսզի VIEW և Model տարրերը դիմեն իրար առանց Controller -ի կիրառման:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">PHP ծրագրավորման լեզվի առաջատար framework -ներից Codeigniter, Laravel, Yii և այլն հիմնված են MVC design pattern -ի վրա:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել Routing -ը MVC -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr">MVC կառուցվածքում &nbsp;URL -ը այլևս չի համապատասխանում PHP -ից հայտնի ստանդարտ տարբերակին</p>
+         <p dir="ltr">Օրինակ profile.php?id=4 տեսքի փոխարեն այնտեղ կլինի user/profile/4</p>
+         <p dir="ltr">Ընդունված է, որ URL -ի առաջին հատվածը ցույց ՝է տալիս Controller -ը</p>
+         <p dir="ltr">Երկրորդ հատվածը նրա մեթոդը, մնացած ցանկացած տարր ներկայացնում է այդ մեթոդի պարամետրերը:</p>
+         <p dir="ltr">Այսպիսով</p>
+         <p dir="ltr">Product/buy/4/2400 -որը կարող է նշանակել՝ գնել 4-րդ ապրանք 2400 դրամով:</p>
+         <p dir="ltr">MVC -ում կլինի</p>
+         <p dir="ltr"><strong>class Product{</strong></p>
+         <p dir="ltr"><strong>&nbsp; &nbsp; function buy($id, $gin){</strong></p>
+         <p dir="ltr">&nbsp; &nbsp; &nbsp;//id = 4</p>
+         <p dir="ltr">&nbsp; &nbsp; //gin = 2400</p>
+         <p dir="ltr"><br></p>
+         <p dir="ltr"><strong>&nbsp; &nbsp;}</strong></p>
+         <p dir="ltr"><strong>}</strong></p>
+         <p data-empty="true"><br></p>
+         <p><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչից կարող է կազմված լինել տվյալների բազան</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Տվյալների բազան կազմված է աղյուսակներից, view -երից, event-ներից, ֆունկցիաներից և պրոցեդուրաներից </span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է նորմալիզացիան</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Նորմալիզացիան սկզբունքների խումբ է, որոնք հնարավորություն են տալիս ապահովել բազայի օպտիմալ վիճակը: &nbsp;Տվյալների բազան կհամարվի նորմալիզացված, եթե այնտեղ տվյալները չկրկնվեն, իսկ կապերը տրված լինեն այնպես, որ տվյալ խնդիրը լուծող ցանկացած տվյալներ հնարավոր լինի վերցնել բազայից: Տվյալների բազան համարվում է նորմալիզացված, եթե այն բավարարում է տվյալների բազայի առաջին, երկրորդ և երրորդ նորմալ տեսքերին: </span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է primary key -ը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Նորմալիզացիայի առաջին կանոնն այն է, որ աղյուսակում ցանկացած տվյալ պետք է ինչ-որ արժեքով տարբերվի մյուսներից: Primary Key դաշտը աղյուսակի սյանը տալիս է հատկություն, որով մի տվյալը կարող է տարբերվել մյուսից: Այսպիսով primary key դաշտում չի կարող լինել կրկնվող տվյալ: &nbsp;Սովորաբար որպես primary key օգտագործվում է id դաշտը, որին auto_increment տալու դեպքում վերջինիս արժեքը կավելանա ավտոմատ:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ո՞րն է բազայի առաջին նորմալ տեսքը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Դիտարկենք հետևյալ աղյուսակը</span></p>
+         <p data-empty="true"><br></p>
+         <table style="margin-right: calc(0%); width: 100%;">
+            <tbody>
+               <tr>
+                  <td class="">
+                     <p dir="ltr"><strong>id</strong></p>
+                  </td>
+                  <td>
+                     <p dir="ltr"><strong>name</strong></p>
+                  </td>
+                  <td class="">
+                     <p dir="ltr"><strong>phone</strong></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="">
+                     <p dir="ltr">1</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Hayk</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">098446655, 065443322</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">2</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">David</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">041324565</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Narek</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">024426532, 098896545, 060605660</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="">
+                     <p dir="ltr">4</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Arman</p>
+                  </td>
+                  <td class="">
+                     <p dir="ltr">041325641</p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <p><br></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ինչպես կարելի է նկատել աղյուսակի phone դաշտում ստորակետով անջատված տվյալներ կան, քանի որ տվյալ x մարդը կարող է ունենալ մեկից ավելի հեռախոսահամարներ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Նորմալիզացիայի երկրորդ կանոնի համաձայն չի կարելի աղյուսակի որևէ դաշտում ունենալ մեկից ավելի տվյալներ:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այժմ ազատվենք աղյուսակի կրկնվող դաշտերից՝ ստանալով աղյուսակի առաջին նորմալ տեսքը:</span></p>
+         <table style="margin-right: calc(0%); width: 100%;">
+            <tbody>
+               <tr>
+                  <td>
+                     <p dir="ltr"><strong>id</strong></p>
+                  </td>
+                  <td>
+                     <p dir="ltr"><strong>name</strong></p>
+                  </td>
+                  <td>
+                     <p dir="ltr"><strong>phone</strong></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">1</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Hayk</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">098446655</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">2</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Hayk</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">065443322</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">David</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">041324565</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">4</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Narek</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">024426532</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">5</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Narek</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">098896545</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">6</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Narek</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">060605660</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">7</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">Arman</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">041325641</p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ո՞րն է բազայի երկրորդ նորմալ տեսքը, ի՞նչ է foreign key դաշտը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Տվյալների բազայի երկրորդ նորմալ տեսքը կառուցելու համար պարտադիր է, որ այն գտնվի առաջին նորմալ տեսքում: Բազայի առաջին նորմալ տեսքը (first normal form) առաջացնում է մի քանի խնդիրներ, առաջինը տվյալները սկսում են կրկնվել և նույն տվյալին բաժին է հասնում primary key -ի մի քանի արժեք, ինչը կարող է հանգեցնել թյուրիմացության հետագայում: &nbsp;Բազայի երկրորդ նորմալ տեսքը կառուցելու համար անհրաժեշտ է ունենալ առանձին աղյուսակ, որտեղ կպահպանվեն տվյալների մյուս հատվածը.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Մեր դեպքում: կունենանք երկու աղյուսակներ՝ users, phone</span></p>
+         <p dir="ltr"><img src="/img/theory/one_to_many.jpg" data-name="Image 2018-01-11 at 15:01:34.jpg" data-type="image" data-id="2" style="width: 300px;" class="fr-fic fr-dib fr-fil fr-draggable"></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այսպիսով users աղյուսակից հեռացրեցինք phone դաշտը փոխարենը phone -ում ունեցանք user_id դաշտը, որը ցույց կտա այն user -ի id -ին (primary key) ում պատկանում է այդ հեռախոսահամարը:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ՝</span></p>
+         <p data-empty="true"><br></p>
+         <table style="margin-right: calc(0%); width: 100%;">
+            <tbody>
+               <tr>
+                  <td>
+                     <p dir="ltr"><strong>id</strong></p>
+                  </td>
+                  <td>
+                     <p dir="ltr"><strong>number</strong></p>
+                  </td>
+                  <td>
+                     <p dir="ltr"><strong>user_id</strong></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">1</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">098446655</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">1</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">2</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">065443322</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">1</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">041324565</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">2</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">4</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">024426532</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">5</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">098896545</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">6</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">060605660</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">3</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p dir="ltr">7</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">041325641</p>
+                  </td>
+                  <td>
+                     <p dir="ltr">4</p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <p><br></p>
+         <p><span style="font-size: 14px;">User_id դաշտը, որն օգտագործվեց տվյալները կապելու համար կոչվում է foreign key դաշտ: Foreign Key դաշտի առկայությունը սահմանափակում է բազայում կեղծ տվյալներ մուտքագրելու հնարավորությունը: Օրինակ, եթե user_id -ին կապված է User աղյուսակի id -ին, ապա user_id դաշտում հնարավոր չէ գրել այնպիսի տվյալ, որը բացակայում է user աղյուսակում:<br></span></p>
+         <p dir="ltr"><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տեսակի կապեր կարող է լինել աղյուսակների միջև</h5>
+      <div class="html-content" style="display: block;">
+         <ul>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">One to one</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">One to many</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Many to many </span></p>
+            </li>
+         </ul>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչով է տարբերվում many to many կապը մյուս տեսակներից</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Այս դեպքում երկու աղյուսակ միմյանց են կապվում երրորդ լրացուցիչ աղյուսակի օգնությամբ:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Որո՞նք են foreign key կիրառելու անհրաժեշտ և բավարար պայմանները</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Երկու դաշտեր հնարավոր է կապել foreign key -ով, եթե.</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Այդ դաշտերն ունեն տվյալների նույն տիպը</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Եթե աղյուսակներից մեկում լրացված չեն այնպիսի տվյալներ, &nbsp;որոնք գոյություն չունեն մյուս աղյուսակում</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ սահմանափակումներ կարելի է տալ Foreign Key ավելացնելիս</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">ON DELETE / ON UPDATE. Ենթադրենք ունենք A և B աղյուսակներ, foreign key -ը գտնվում է B -ում:</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>CASCADE</strong> &nbsp;- A -ից տվյալ ջնջելիս ջնջվում են նրան համապատասխան տվյալները B -ից</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>DO NOTHING</strong> - A -ից տվյալ ջնջելիս B -ում համապատասխան տվյալները պահպանվում են&nbsp;</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>SET NULL </strong>- A -ից տվյալ ջնջելիս նրան համապատասխան տվյալները B -ում ստանում են Null արժեք</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>RESTRICT </strong>- A -ից անհնար է տվյալներ ջնջել, քանի դեռ կան կապակցված տվյալներ B -ում</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տեսակի join -եր կան</h5>
+      <div class="html-content" style="display: block;">
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Inner join </strong>- A և B աղյուսակներից վերցնում է միայն կապակցված և հստակ համապատասխանության մեջ դրված տվյալները</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Left join</strong>&nbsp;- վերցնում է A աղյուսակն ամբողջությամբ, նրան համապատասխանության մեջ է դնում B -ի տվյալները. Այն դաշտերը, որոնք համապատասխան արժեքներ չեն ունենում դառնում են Null</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>Right join</strong> - վերցնում է B աղյուսակն ամբողջությամբ, նրան համապատասխանության մեջ է դնում A -ի տվյալները. Այն դաշտերը, որոնք համապատասխան արժեքներ չեն ունենում դառնում են Null</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է ենթահարցումը (subquery)</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Ենթահարցումը MySQL լեզվի մեխանիզմ է, որի օգնությամբ պայմանական բլոկում հնարավոր է գրել մեկ այլ select.</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;"><strong>select * from usanox where id = ( select id from likvidner where qanak &gt; 4 limit 1)</strong></span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ենթահարցումները &nbsp;որոշ իրավիճակներում թույլ են տալիս խուսափել join -երից:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Ենթահարցումները կարող են կիրառվել = -ի և in օպերատորի օգնությամբ</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;"><strong>In</strong> &nbsp;երբ ենթահարցումը վերադարձնում է մեկից ավելի տվյալներ</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">&nbsp;<strong>= &nbsp;</strong>երբ ենթահարցումը վերադարձնում է մեկ տվյալ</span></p>
+            </li>
+         </ol>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Բացատրել group by և having հրամանները</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Group by -ը թույլ է տալիս խմբավորել տվյալները ըստ ինչ-որ ֆունկցիայի (օրինակ՝ sum, count...)</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Having -ը թույլ է տալիս գրել պայմանական արտահայտություն խմբավորման արդյունքի նկատմամբ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է UNION -ը</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Union հրամանը թույլ է տալիս միավորել մի քանի select-ների արդյունքներ, եթե այդ սելեկտներում սյուների քանակը &nbsp;և տվյալների տիպը նույնն է: union -ը ազատվում է կրկնվող տվյալներից, իսկ union all -ը թույլ տալիս դրանց կիրառումը:</span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է view-ն</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">View -ն տվյալների բազայի օբյեկտ է, որի ներսում հնարավոր է պահել select -ի արդյունք: Ենթադրենք A,B,C աղյուսակներն իրար կապելուց և x1,x2,x3 պայմանները գրելու արդյունքում ստացվել է ինչ-որ M արդյունք: Այդ արդյունքը կարելի է պահպանել view -ի մեջ</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Create view ‘myview’ as select M</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Այս դեպքում M անվան տակ կպահպանվի ամբողջ արդյունքը, որը հնարավոր է կիրառել այլ դիրքերում: Օրինակ select * from MyView where id &gt; 4</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա ֆունկցիայի և պրոցեդուրայի միջև MySQL -ում</h5>
+      <div class="html-content" style="display: block;">
+         <p><span style="font-size: 14px;">Ֆունկցիաները վերադարձնում են արժեք, պրոցեդուրաները` ոչ: </span><br></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է trigger -ը</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Տրիգերը թույլ է տալիս MySQL -ին ավելացնել Event -ներ, որոնք կաշխատեն խիստ որոշակի իրավիճակներում: Օրինակ`&nbsp;</span></p>
+         <ol>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">After insert</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Before insert</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">After delete</span></p>
+            </li>
+            <li dir="ltr">
+               <p dir="ltr"><span style="font-size: 14px;">Before update</span></p>
+            </li>
+         </ol>
+         <p dir="ltr"><span style="font-size: 14px;">Եվ այլն:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Trigger -ների օգնությամբ հնարավոր է ապահովել տվյալների բազաների ամբողջականությունը:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ է  իրենից ներկայացնում տվյալների բազաների ամբողջականությունը:</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Չնայած նրան, որ MySQL -ը ռելացիոն բազա է և կապերի օգնությամբ կրճատվում է կեղծ տվյալներ ունենալու հավանականությունը, այնուամենայնիվ տվյալները հնարավոր է ավելացնել նաև ձեռքով, ինչը կարող է հանգեցնել ոչ լրիվ տվյալների:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Օրինակ սոցիալական ցանցում առկա են friends (u1,u2) և namakner(u1,u2) աղյուսակները:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Հնարավոր է այնպես անել, որպեսզի Namakner աղյուսակում լինի ենթադրենք u1=8, u2 = 32 տվյալ, այսինքն 8-րդ օգտագործողը նամակ է գրել 32 -րդին, սակայն սա կհամարվի սխալ, եթե Friends աղյուսակում նրանք ընկերներ չեն: Այսինքն կստացվի, որ ոչ friend-ները կարող են իրար նամակ գրել: Նմանատիպ իրավիճակներից խուսափելու համար ապահովում են տվյալների բազաների ամբողջականությունը, որը տեղի է ունենում trigger -ների օգնությամբ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+   <div class="quest-item span6">
+      <h5>Ի՞նչ տարբերություն կա table -ի և temporary table -ի միջև</h5>
+      <div class="html-content" style="display: block;">
+         <p dir="ltr"><span style="font-size: 14px;">Table -ը բազայի տարրերից է, որը հստակ երևում է բազայում:</span></p>
+         <p dir="ltr"><span style="font-size: 14px;">Temporary table -ը դինամիկ աղյուսակ է, որը գոյություն ունի բացառապես Ֆունկցիայի/պրոցեդուրայի կոդում և tables բաժնում տեսանելի չէ:</span></p>
+      </div>
+      <small> Պատասխանող՝ Ուսումնական կենտրոնի ղեկավար, Արմեն Մարջինյան</small>
+   </div>
+</div>
+</div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12"> ՊՐՈՖԱՅԹԻ ՈՒՍՈՒՄՆԱԿԱՆ ԿԵՆՏՐՈՆ<br>© ԱՐՄԵՆ ՄԱՐՋԻՆՅԱՆ 
+</div>
+
+
+</div></div></body>

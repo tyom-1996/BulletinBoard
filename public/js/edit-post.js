@@ -101,7 +101,9 @@ $(document).ready(function(){
                 product_id:product_id
             },
             success:function(r){
-                $this.closest('.upload-img-item').remove()
+                if(r =='deleted'){
+                    $this.closest('.upload-img-item').remove()
+                }
             }
         })
     })

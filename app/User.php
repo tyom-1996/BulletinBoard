@@ -21,4 +21,11 @@ class User extends Authenticatable
         return User::find(Auth::id());
     }
 
+
+
+    public function post()
+    {
+        return $this->hasMany('App\Post');
+    }
+
 }

@@ -19,7 +19,7 @@
     <script src="{{asset('js/add-new-post.js')}}"></script>
     <title>Новое объявление</title>
 </head>
-<body >
+<body class="{!! url('product' ) !!}/5" >
     @include('includes.header')
 
 <section class="main-section ">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="select-inp-bl">
                         <select class="input-select style-1  select2-initialized"  type="price-select" name="currency" tabindex="-1" title="" style="/* display: none; */">
-                            <option value="RU" selected="selected">RU</option>
+                            <option value="RUB" selected="selected">RUB</option>
                                 <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                         </select>

@@ -11,19 +11,19 @@ body{
 .main-section{
     background-image: none;
     width: 100%;
-    height: 100vh;
-    position: fixed;
+    min-height: 500px;
+    height: auto!important;
+    position: static!important;
     top: 0;
     left: 0;
-    padding: 46px 0px;
+    padding: 0;
 
 }
 
 .my-messages .padding-block {
-    padding: 30px;
     padding-top: 0;
     width: 100%;
-    height: 100%;
+    min-height: 400px;
 }
 
 
@@ -32,14 +32,14 @@ body{
     max-width: 920px;
     min-height: 100%;
     background: white;
-    padding: 20px;
+    padding: 20px 20px 51px 20px;
     position: relative;
 }
 
 .section-2 {
     width: 100%;
     height: auto;
-    margin-top: 100vh;
+    margin-top: 0!important;
     background: white;
     position: absolute;
     bottom: 0;
@@ -140,3 +140,202 @@ body{
     min-height: 300px;
 }
 
+
+
+.content-right-section-1{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+}
+
+.wishlist-btn{
+    width: 32px;
+    position: relative;
+    background-color: #fff;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+
+svg#svg-id-heart-empty{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    fill: #bbb;
+}
+
+
+.content-right-title{
+    word-break: break-word;
+    max-width: 550px;
+}
+
+
+.add-new-post-btn{
+    margin: 0;
+    position: relative;
+    padding: 4px 11px 4px 10px;
+    background: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #4cda64;
+
+}
+
+.add-new-post-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #4cda64;
+}
+
+
+.add-new-post-btn span {
+    line-height: 24px;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #4cda64;
+}
+
+
+
+
+#share-buttons {
+    min-height: 24px;
+}
+
+#share-buttons a {
+    display: inline-block;
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-top: 2px;
+    text-align: center;
+    position: relative;
+}
+
+.social-button svg{
+    width: 17px;
+    height: 17px;
+    fill: #a0a0a0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+
+.slide-and-desc-bl{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 19px;
+}
+
+.slide-and-desc-left-block,.slide-and-desc-right-block{
+    width: 50%;
+    min-height: 300px;
+    /*outline: 1px solid black;*/
+}
+
+.block-title{
+    margin: 0;
+    font-size: 14px;
+    color: #1c9a3d;
+    font-weight: 400;
+    padding: 7px 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.block{
+    padding: 5px;
+}
+
+.block .price {
+    margin: 15px 0;
+    font-size: 24px;
+    color: #535353;
+}
+
+.block .price span{
+    font-family: lucida_grandebold;
+    font-weight: bold;
+}
+
+.block .price span sup {
+    font-family: lucida_granderegular;
+    font-weight: 400;
+    margin-left: 7px;
+    font-size: 16px;
+}
+
+
+.user-info.user-info-contacts{
+    display: flex;
+    justify-content: space-between;
+}
+.user-phone-number,.write-new-message{
+    width: 49%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.user-info-btn{
+    margin: 0;
+    position: relative;
+    padding: 4px 11px 4px 10px;
+    background:  #4cda64;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #4cda64;
+}
+
+.user-info-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+
+.user-info-btn span {
+    line-height: 24px;
+    padding-left: 10px;
+    font-size: 15px;
+    color:white;
+}
+
+
+.block-description .text {
+    margin: 10px 0 15px;
+    font-family: lucida_granderegular;
+    font-weight: 400;
+    color: #535353;
+    font-size: 15px;
+    line-height: 1.4em;
+    letter-spacing: 0.5px;
+}
+
+
+.block-description{
+    padding: 5px;
+}

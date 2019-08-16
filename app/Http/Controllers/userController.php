@@ -93,22 +93,24 @@ class userController extends Controller
 
     public function register(Request $request){
 
-        $rules =[
-            'fullname'=>'required',
-            'gender' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
-            'password_confirmation' => 'min:6'
-        ];
-        $message = [
-            'fullname.required' => 'This field required.',
-            'email.required' => 'This field required.',
-            'gender.unique' => 'Email already exists.',
-            'password.min' => 'Password must be 6 char',
-            'password_confirmation.required' => 'This field required.'
-        ];
         // VALIDATE
-        $validatedData = $request->validate($rules,$message);
+
+        $validatedData = $request->validate(
+            [
+                'fullname'=>'required',
+                'gender' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+                'password_confirmation' => 'min:6'
+            ],
+            [
+                'fullname.required' => 'This field required.',
+                'email.required' => 'This field required.',
+                'gender.unique' => 'Email already exists.',
+                'password.min' => 'Password must be 6 char',
+                'password_confirmation.required' => 'This field required.'
+            ]
+        );
 
         // INSERT
         $input = $request->all();

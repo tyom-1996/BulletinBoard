@@ -28,7 +28,9 @@
     <div class="padding-block">
         <div class="center-my-classifieds-block">
 
-            <form action="/edit-post" method="post" id="new-classified-form" enctype="multipart/form-data">
+            <form action="/product/{{$post_data['id']}}" method="post" id="new-classified-form" enctype="multipart/form-data">
+                {{method_field('PUT')}}
+
                 <input type="hidden" name="product_id" value="{{$post_data['id']}}" class="product_id">
                 {{csrf_field()}}
                 <div class="new-classified-steps">
