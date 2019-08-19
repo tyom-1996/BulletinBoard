@@ -25,7 +25,30 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()){
+
+            $user_id = Auth::id();
+            $user_data = DB::select('select * from users where id = :id', ['id' => $user_id]);
+            $created_at = $user_data[0]->created_at;
+
+            $y = "EXTRACT(YEAR FROM '".$created_at."')";
+            $m = "EXTRACT(MONTH FROM '".$created_at."')";
+
+            $month_array = array('Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря');
+            $year = DB::select("SELECT EXTRACT(YEAR FROM '".$created_at."')")[0]->$y;
+            $month =  DB::select("SELECT EXTRACT(MONTH FROM '".$created_at."')")[0]->$m;
+            $created_at_content = 'На OBYAVA.ua с: '.$month.' '.$month_array[$month-1].'  '.$year.'';
+
+            $user_data[0]->created_at_content = $created_at_content;
+
+
+            $content = Post::Get_User_Classifieds();
+
+            return view('loginUserPages/myClassifieds',array('user_data' => $user_data,'classifieds_Content' => $content));
+
+        }else{
+            return Redirect::route('login_page');
+        }
     }
 
     /**
@@ -38,7 +61,8 @@ class ProductController extends Controller
         if (Auth::user()){
             return view('loginUserPages.new-post-part-1');
         }else{
-            return redirect()->route('myClassifieds');
+            return redirect()
+                ->route('products.index');
         }
     }
 
@@ -74,14 +98,13 @@ class ProductController extends Controller
 
         Post::SaveNewPost($insert_data,$images_paths);
 
-        return redirect()->route('new-post-part-2');
+        return redirect()->route('postSuccessfullyPage');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
      */
     public function show($id)
     {
@@ -89,36 +112,30 @@ class ProductController extends Controller
         if ( $post_data != null )
             return view('loginUserPages.single_post',array('post_data' => $post_data));
         else
-            return redirect()->route('myClassifieds');
+            return redirect()
+                ->route('products.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
      */
     public function edit($id)
     {
+        $post_data = User::find(Auth::id())->post->where('id','=',$id)->first();
 
-        $post_data = Post::find($id);
-
-        if ( $post_data != null )
-        {
+        if ( isset($post_data) && !empty($post_data) )
             return view('loginUserPages/edit-classifieds',array('post_data' => $post_data));
-        }
         else
-        {
-            return redirect()->route('myClassifieds');
-        }
+            return redirect()
+                ->route('products.index');
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
      */
     public function update(Request $request, $id)
     {
@@ -141,7 +158,8 @@ class ProductController extends Controller
         $insert_data['user_id'] = Auth::id();
 
         Post::updatePostData($insert_data,$all_images,$post_id);
-        return redirect()->route('myClassifieds');
+        return redirect()
+            ->route('products.index');
     }
 
     /**
@@ -152,11 +170,9 @@ class ProductController extends Controller
      */
     public function destroy(Request $request)
     {
-
         if($request->ajax())
         {
             $id = $request->input('id');
-//            Post::DeletePostInDatabase($id);
             Post::destroy($id);
             return response()->json('deleted');
         }
@@ -171,7 +187,6 @@ class ProductController extends Controller
   *
   *
 */
-
 
     public function deletePostImage(Request $request)
     {
@@ -201,7 +216,7 @@ class ProductController extends Controller
     }
 
 
-    public function OpenNewProductPart2()
+    public function postSuccessfullyPage()
     {
         if (Auth::user()){
             return view('loginUserPages.new-post-part-2');

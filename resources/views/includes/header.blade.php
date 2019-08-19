@@ -56,7 +56,7 @@
             <div class="right-header-menu-bl">
                 <div class="user-header">
 {{--                    <span class="user-header-span" style="background: url({{Session::get('user_data')['profile_image']}});background-size: cover;background-position: center;">--}}
-                    <span class="user-header-span" style="background: url({{App\User::get_User_Photo()}});background-size: cover;background-position: center;">
+                    <span class="user-header-span" style="background: url({{$profile_photo}});background-size: cover;background-position: center;">
                     </span>
                     <span style="font-size: 14px;"> Профиль</span>
                     <span><i style="transform: rotate(180deg);font-size: 10px" class="fas fa-chevron-up"></i></span>

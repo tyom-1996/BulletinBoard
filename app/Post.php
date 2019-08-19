@@ -80,11 +80,6 @@ class Post extends Model
     }
 
 
-    public static function DeletePostInDatabase($id)
-    {
-       Post::where('id', '=', $id)->delete();
-    }
-
 
     public static function updatePostData($update_data,$images,$post_id)
     {
@@ -108,9 +103,12 @@ class Post extends Model
     public static function deletePostImageInDB($key,$product_id)
     {
         $post = Post::find($product_id);
+
         $images = json_decode($post->images);
-        unset($images[$key]);
         $new_images_array = [];
+
+        unset($images[$key]);
+
         foreach ($images as $key => $value)
         {
             $new_images_array[] = $value;
@@ -120,6 +118,11 @@ class Post extends Model
         $post->save();
     }
 
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 
 

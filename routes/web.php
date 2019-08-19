@@ -37,38 +37,33 @@ Route::post('/delete_photo','profileController@deleteProfilePhoto');
 
 
 //Add new product
-
-Route::post('/add-new-product','postController@addNewProduct');
+//Route::post('/add-new-product','postController@addNewProduct');
 
 
 //Delete
-
 //Route::post('/delete-classified','postController@deleteMyPost');
 
 //Edit
-
 //Route::get('/edit-post/{id}','postController@editClassifiedsPage')->name('edit-post');
 //Route::post('/edit-post','postController@editMyPost');
 
-
-Route::get('/post/{id}','postController@singlePostPage')->name('single-post');
+//Route::get('/post/{id}','postController@singlePostPage')->name('single-post');
 
 //Route::post('/delete-image','postController@deletePostImage');
 
-//TEST
+
+
+//Alisa
 
 Route::get('/chat-bot', function () {
     return view('test.botTest');
 });
 
 
-
-
 Route::post('/delete-image','ProductController@deletePostImage');
-Route::get('/new-post-part-2','ProductController@OpenNewProductPart2')->name('new-post-part-2');
+Route::get('/product/created','ProductController@postSuccessfullyPage')->name('postSuccessfullyPage');
 
-
-Route::resource('product','ProductController');
+Route::resource('products','ProductController');
 
 
 

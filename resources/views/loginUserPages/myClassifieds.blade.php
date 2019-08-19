@@ -192,13 +192,15 @@
 
                                                             <div class="delete-classified"  data-id="{{$value[$i]['id']}}"><i class="far fa-trash-alt"></i></div>
 
-                                                            <a href="/product/{{$value[$i]['id']}}/edit" target="_blank" class="edit-classified"><i style="color: black;" class="far fa-edit"></i>  </a>
+                                                            <a href="{{route('products.edit',['id'=> $value[$i]['id']])}}" target="_blank" class="edit-classified">
+                                                                <i style="color: black;" class="far fa-edit"></i>
+                                                            </a>
 
                                                         </div>
                                                         <div class='fl-100 classified-summary'>
                                                             <div class='name title' >
                                                                 <h4>
-                                                                    <a href='product/{{$value[$i]['id']}}' title='Объявление Услуги экскаватора, погрузчика, доставка стройматериалов'>
+                                                                    <a href='{{route('products.show',['id'=> $value[$i]['id']])}}' title='Объявление Услуги экскаватора, погрузчика, доставка стройматериалов'>
                                                                         {{$value[$i]['title']}}
                                                                     </a>
                                                                 </h4>
@@ -239,13 +241,12 @@
                     {{-------------END right BODY------------}}
 
 
-
                     {{-----------START footer--------------}}
                         <div class="content-right-footer">
                             <div class="classifieds-list-empty">Разместите свое объявление
                                 <br>
                                 <br>
-                                <a href="/product/create" rel="follow" target="_blank">
+                                <a href="{{route('products.create')}}" rel="follow" target="_blank">
                                      <img width="235" height="46" border="0" alt="Подать объявления бесплатно" src="{{asset('img/sendads_ru.gif')}}">
                                 </a>
                             </div>

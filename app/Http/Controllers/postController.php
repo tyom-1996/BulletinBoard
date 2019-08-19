@@ -148,16 +148,16 @@ class postController extends Controller
 //        }
 //    }
 
-
-    public function singlePostPage(Request $request)
-    {
-        $id = $request->id;
-        $post_data = Post::GetPostByID($id);
-        if ( $post_data != null )
-            return view('loginUserPages.single_post',array('post_data' => $post_data));
-        else
-            return redirect()->route('myClassifieds');
-    }
+//
+//    public function singlePostPage(Request $request)
+//    {
+//        $id = $request->id;
+//        $post_data = Post::GetPostByID($id);
+//        if ( $post_data != null )
+//            return view('loginUserPages.single_post',array('post_data' => $post_data));
+//        else
+//            return redirect()->route('myClassifieds');
+//    }
 
 
 

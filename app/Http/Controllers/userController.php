@@ -29,7 +29,8 @@ class userController extends Controller
     public function openLoginPage()
     {
         if (Auth::user()){
-            return redirect()->route('myClassifieds');
+            return redirect()
+                ->route('products.index');
         }else{
             return view('login');
         }
@@ -71,7 +72,7 @@ class userController extends Controller
             ]);
 
             return redirect()
-                ->route('myClassifieds');
+                ->route('products.index');
         }else{
             return redirect()
                 ->route('login_page');

@@ -38,7 +38,7 @@ function deleteClassified($this,id)
 
     $.ajax({
         type:'POST',
-        url:`http://localhost:8000/product/${id}`,
+        url:`http://localhost:8000/products/${id}`,
         data:{
             id:id,
             _method: 'DELETE'

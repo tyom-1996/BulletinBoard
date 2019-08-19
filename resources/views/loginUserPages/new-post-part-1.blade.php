@@ -19,7 +19,7 @@
     <script src="{{asset('js/add-new-post.js')}}"></script>
     <title>Новое объявление</title>
 </head>
-<body class="{!! url('product' ) !!}/5" >
+<body  >
     @include('includes.header')
 
 <section class="main-section ">
@@ -27,7 +27,7 @@
     <div class="padding-block">
         <div class="center-my-classifieds-block">
 
-            <form action="/add-new-product" method="post" id="new-classified-form" enctype="multipart/form-data">
+            <form action="{!! url('product' ) !!}" method="post" id="new-classified-form" enctype="multipart/form-data">
 
                 {{csrf_field()}}
                 <div class="new-classified-steps">
